@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+* {
+    @apply font-inter
+}
+
+.listCategoryShow {
+    @apply block
+}
+
+.arrowRightRotate {
+    @apply rotate-90 -mt-1
+}
+
+.lineBurgerBtnFt {
+    @apply absolute top-2 rotate-45
+}
+.lineBurgerBtnSd {
+    @apply hidden
+}
+.lineBurgerBtnTh {
+    @apply absolute top-2 -rotate-45
+}
+
+.containerContentTranslate {
+    @apply translate-x-72 transition-all duration-300
+}
