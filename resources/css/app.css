@@ -39,3 +39,11 @@ body {
 .containerContentTranslate {
     @apply translate-x-72 transition-all duration-300
 }
+
+.navbarSticky {
+    @apply sticky top-0
+}
+
+.jumbotronPtChange {
+    @apply pt-10
+}

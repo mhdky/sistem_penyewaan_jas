@@ -19,6 +19,13 @@ export default {
             },
             colors: {
                 'blue-primary': '#171738'
+            },
+            screens: {
+                'md-768': '768px',
+                'md-900': '900px',
+                'lg-1000': '1000px',
+                'lg-1240': '1240px',
+                'lg-1365': '1365px',
             }
         },
     },
