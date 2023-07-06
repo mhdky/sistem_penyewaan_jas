@@ -1,6 +1,5 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,35 +14,57 @@ body {
 }
 
 * {
-    @apply font-inter
+    @apply font-inter;
 }
 
 .listCategoryShow {
-    @apply block
+    @apply block;
 }
 
 .arrowRightRotate {
-    @apply rotate-90 -mt-1
+    @apply rotate-90 -mt-1;
 }
 
 .lineBurgerBtnFt {
-    @apply absolute top-2 rotate-45
+    @apply absolute top-2 rotate-45;
 }
 .lineBurgerBtnSd {
-    @apply hidden
+    @apply hidden;
 }
 .lineBurgerBtnTh {
-    @apply absolute top-2 -rotate-45
+    @apply absolute top-2 -rotate-45;
 }
 
 .containerContentTranslate {
-    @apply translate-x-72 transition-all duration-300
+    @apply translate-x-72 transition-all duration-300;
 }
 
 .navbarSticky {
-    @apply sticky top-0
+    @apply sticky top-0;
 }
 
 .jumbotronPtChange {
-    @apply pt-10
+    @apply pt-10;
+}
+
+/* swiper ja */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

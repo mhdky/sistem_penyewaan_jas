@@ -17,14 +17,53 @@
         {{-- card image --}}
         <div class="relative z-10">
             <div class="bg-pink-100 w-[350px] h-[280px] rounded-md flex overflow-hidden lg-1000:w-[38vw] lg-1000:h-[30vw] lg-1365:w-[525px] lg-1365:h-[400px]">
-                <img src="{{ asset('img/265177529_922796225334083_7639691792226053207_n.jfif') }}" alt="image sore" class="w-full h-full object-cover">
+                
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                        <img src="{{ asset('img/265177529_922796225334083_7639691792226053207_n.jfif') }}" alt="image sore" class="w-full h-full object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                        <img src="{{ asset('img/241770847_384361253446153_6479483033071960731_n.jfif') }}" alt="image sore" class="w-full h-full object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                        <img src="{{ asset('img/264682617_591053765316969_5596991100838867849_n.jfif') }}" alt="image sore" class="w-full h-full object-cover">
+                        </div>
+                        <div class="swiper-slide">
+                        <img src="{{ asset('img/265400433_427526075658452_4422759034790857474_n.jfif') }}" alt="image sore" class="w-full h-full object-cover">
+                        </div>                      
+                    </div>
+                </div>
             </div>
-        </div>
-
-        {{-- next & previous --}}
-        <div class="w-full flex justify-center mt-3">
-            <div class="bg-violet-700 w-5 h-5 rounded-full flex justify-center items-center mx-1"><i class="fas fa-chevron-left text-white text-[8px]"></i></div>
-            <div class="bg-violet-700 w-5 h-5 rounded-full flex justify-center items-center mx-1"><i class="fas fa-chevron-right text-white text-[8px]"></i></div>
         </div>
     </div>
 </div>
+
+@push('swiper-style')
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+@endpush
+
+@push('swiper-js')
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+@endpush

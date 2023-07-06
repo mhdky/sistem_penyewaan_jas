@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ky-Jas | Jual & Sewa Jas Keren, Lengkap, Harga Bersahabat</title>
 
+    @stack('swiper-style')
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -14,5 +16,7 @@
 
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="https://kit.fontawesome.com/209072fbdb.js" crossorigin="anonymous"></script>
+
+    @stack('swiper-js')
 </body>
 </html>
