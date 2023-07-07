@@ -16,7 +16,6 @@
     </div>
 </div>
 
-
 {{-- nav desktop --}}
 <div class="bg-violet-600 w-full px-6 py-3 hidden justify-between items-center fixed z-20 top-0 md-768:flex lg-1000:px-10 lg-1240:px-[60px]">
     {{-- container logo & list nav desktop --}}

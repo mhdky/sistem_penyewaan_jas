@@ -21,7 +21,10 @@ export default {
                 'blue-primary': '#171738'
             },
             screens: {
+                'sm-460': '460px',
+                'md-600': '600px',
                 'md-768': '768px',
+                'md-800': '800px',
                 'md-900': '900px',
                 'lg-1000': '1000px',
                 'lg-1240': '1240px',
