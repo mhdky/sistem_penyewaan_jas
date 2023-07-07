@@ -8,6 +8,7 @@
         @include('partials.jumbotron.index')
         @include('partials.card-product.index')
         @include('partials.choose-us.index')
+        @include('partials.their-opinion.index')
 
         <div class="bg-white h-screen mx-auto"></div>
     </div>
