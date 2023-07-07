@@ -53,7 +53,7 @@
 </div>
 
 {{-- kids suit --}}
-<div class="bg-white w-full pt-12 px-4 md-768:px-6 lg-1000:px-10 lg-1240:px-[60px] lg-1365:px-0" id="adult-suit">
+<div class="bg-white w-full pt-12 px-4 md-768:px-6 lg-1000:px-10 lg-1240:px-[60px] lg-1365:px-0">
     <div class="w-full lg-1365:w-[1239px] lg-1365:mx-auto lg-1365:px-1">
         {{-- name saction --}}
         <div class="w-full flex justify-center items-center lg-1000:mt-14">

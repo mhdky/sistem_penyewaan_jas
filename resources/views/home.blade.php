@@ -7,6 +7,7 @@
         @include('partials.navbar.btn-nav-mobile')
         @include('partials.jumbotron.index')
         @include('partials.card-product.index')
+        @include('partials.choose-us.index')
 
         <div class="bg-white h-screen mx-auto"></div>
     </div>
