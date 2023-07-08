@@ -25,7 +25,7 @@
 
             {{-- input search --}}
             <div class="bg-neutral-200 w-full h-[50px] mt-4 pr-2 rounded-md flex justify-between items-center overflow-hidden relative">
-                <input type="text" name="search" id="search" placeholder="Search" autocomplete="off" class="bg-transparent w-full flex-[2] border-none outline-none focus:ring-0 lg-1000:pl-5">
+                <input type="text" name="search" id="search" placeholder="Search" autocomplete="off" class="inputMainSearch bg-transparent w-full flex-[2] border-none outline-none focus:ring-0 lg-1000:pl-5">
                 <div class="bg-violet-600 w-[32px] h-[32px] rounded-md flex justify-center items-center">
                     <i class="fas fa-search text-neutral-200"></i>
                 </div>

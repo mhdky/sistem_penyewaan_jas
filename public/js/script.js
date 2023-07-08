@@ -42,10 +42,16 @@ const body = document.querySelector('body');
 btnShowMainSearchMbl.addEventListener('click', () => {
     mainSearch.style.display = 'block';
     body.style.overflow = 'hidden';
+    setTimeout(() => {
+        document.querySelector('.inputMainSearch').focus();
+    }, 100);
 });
 btnShowMainSearchDst.addEventListener('click', () => {
     mainSearch.style.display = 'block';
     body.style.overflow = 'hidden';
+    setTimeout(() => {
+        document.querySelector('.inputMainSearch').focus();
+    }, 100);
 });
 btnCloseMainSearch.addEventListener('click', () => {
     mainSearch.style.display = 'none';
