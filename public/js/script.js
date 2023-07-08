@@ -32,3 +32,22 @@ showDropDown.addEventListener('click', () => {
 closeDropDown.addEventListener('click', () => {
     listDropDown.style.display = 'none';
 });
+
+// main search
+const mainSearch = document.querySelector('.mainSearch');
+const btnShowMainSearchDst = document.querySelector('.btnShowMainSearchDst');
+const btnShowMainSearchMbl = document.querySelector('.btnShowMainSearchMbl');
+const btnCloseMainSearch = document.querySelector('.btnCloseMainSearch');
+const body = document.querySelector('body');
+btnShowMainSearchMbl.addEventListener('click', () => {
+    mainSearch.style.display = 'block';
+    body.style.overflow = 'hidden';
+});
+btnShowMainSearchDst.addEventListener('click', () => {
+    mainSearch.style.display = 'block';
+    body.style.overflow = 'hidden';
+});
+btnCloseMainSearch.addEventListener('click', () => {
+    mainSearch.style.display = 'none';
+    body.style.overflow = 'auto';
+});

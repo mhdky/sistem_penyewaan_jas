@@ -25,7 +25,7 @@
 
         {{-- list desktop --}}
         <ul class="flex items-center -mt-2 relative">
-            <li class="flex items-center"><i class="fas fa-search text-white text-sm mr-5 cursor-pointer hover:text-slate-100 md-768:mt-2"></i></li>
+            <li class="btnShowMainSearchDst flex items-center"><i class="fas fa-search text-white text-sm mr-5 cursor-pointer hover:text-slate-100 md-768:mt-2"></i></li>
             <li class="md-768:mt-1"><a href="/" class="text-white text-sm font-bold mr-5 hover:text-slate-100">Home</a></li>
             <li class="showDropDown text-white text-sm font-bold mr-5 select-none md-768:mt-[6px] cursor-pointer hover:text-slate-100">Categories</li>
             <li class="md-768:mt-1"><a href="/" class="text-white text-sm font-bold mr-5 hover:text-slate-100">Rute</a></li>
