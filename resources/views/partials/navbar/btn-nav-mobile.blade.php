@@ -24,12 +24,26 @@
         <a href="/" class="text-blue-primary text-2xl font-hanuman font-bold mr-10 md-768:mt-[6px]">KY-JAS</a>
 
         {{-- list desktop --}}
-        <ul class="flex items-center -mt-2">
+        <ul class="flex items-center -mt-2 relative">
             <li class="flex items-center"><i class="fas fa-search text-white text-sm mr-5 cursor-pointer hover:text-slate-100 md-768:mt-2"></i></li>
             <li class="md-768:mt-1"><a href="/" class="text-white text-sm font-bold mr-5 hover:text-slate-100">Home</a></li>
-            <li class="text-white text-sm font-bold mr-5 select-none md-768:mt-[6px] cursor-pointer hover:text-slate-100">Categories</li>
+            <li class="showDropDown text-white text-sm font-bold mr-5 select-none md-768:mt-[6px] cursor-pointer hover:text-slate-100">Categories</li>
             <li class="md-768:mt-1"><a href="/" class="text-white text-sm font-bold mr-5 hover:text-slate-100">Rute</a></li>
             <li class="md-768:mt-1"><a href="/" class="text-white text-sm font-bold mr-5 hover:text-slate-100">About</a></li>
+
+            {{-- category drop down --}}
+            <div class="listDropDown absolute top-8 left-24 hidden">
+                <div class="relative">
+                    {{-- close dorop down desktop --}}
+                    <div class="closeDropDown fixed top-0 right-0 bottom-0 left-0"></div>
+
+                    {{-- list drop down desktop --}}
+                    <ul class="bg-violet-600 w-32 px-4 py-2 border border-violet-700 absolute z-[2] rounded-md">
+                        <li class="py-1"><a href="#" class="text-white text-sm font-bold hover:text-slate-100">Adult Suit</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-sm font-bold hover:text-slate-100">Kid's Suit</a></li>
+                    </ul>
+                </div>                
+            </div>
         </ul>
     </div>
 

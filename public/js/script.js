@@ -21,3 +21,14 @@ burgerBtn.addEventListener('click', () => {
     navbar.classList.toggle('navbarSticky');
     jumbotron.classList.toggle('jumbotronPtChange');
 });
+
+// nav dropdown desktop
+const showDropDown = document.querySelector('.showDropDown');
+const listDropDown = document.querySelector('.listDropDown');
+const closeDropDown = document.querySelector('.closeDropDown');
+showDropDown.addEventListener('click', () => {
+    listDropDown.style.display = 'block';
+});
+closeDropDown.addEventListener('click', () => {
+    listDropDown.style.display = 'none';
+});
