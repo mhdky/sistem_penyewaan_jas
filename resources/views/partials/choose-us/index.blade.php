@@ -8,7 +8,7 @@
             <div class="absolute z-[2] w-full h-full flex flex-col justify-evenly items-center">
                 <h1 class="text-white text-xl font-bold text-center px-2 md-807:text-[24px]">Mengapa Harus Pilih Kami</h1>
                 <p class="text-violet-200 text-sm text-center px-2 md-807:text-base md-671:w-[550px] md-807:w-[650px]">Kami menawarkan jas yang berkualitas tinggi yang dapat membuat anda tampak elegan ketika menggunakannya</p>
-                <a href="#" class="bg-violet-600 w-[136px] h-[28px] rounded-md text-white text-[12px] font-bold flex justify-center items-center md-807:w-[146px] md-807:h-[38px] text-sm">Mulai Sewa Jas</a>
+                <a href="#adult-suit" class="bg-violet-600 w-[136px] h-[28px] rounded-md text-white text-[12px] font-bold flex justify-center items-center text-sm hover:bg-violet-700 md-807:w-[146px] md-807:h-[38px]">Mulai Sewa Jas</a>
             </div>
 
             {{-- silinder --}}

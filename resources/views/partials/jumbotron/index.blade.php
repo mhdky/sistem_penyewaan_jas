@@ -6,7 +6,7 @@
             <h1 class="text-white font-hanuman font-bold text-3xl lg-1000:text-[48px] lg-1000:mb-6">KY-JAS</h1>
             <h3 class="text-violet-300 font-hanuman font-bold text-lg text-center leading-6 my-4 md-768:text-white lg-1000:text-xl lg-1000:mb-8">Jual & Sewa Jas Keren, Lengkap, Harga Bersahabat</h3>
             <p class="text-violet-300 text-sm text-center font-bold hidden md-768:block md-768:mb-6 lg-1000:text-base">Jl. Binjai Km 9,5 Gg Balai Desa Pria Laut Satu, Sumatera Utara</p>
-            <a href="#adult-suit" class="bg-blue-primary text-white text-sm font-bold px-3 py-2 rounded lg-1000:px-4">Lihat Jas</a>
+            <a href="#adult-suit" class="bg-blue-primary text-white text-sm font-bold px-3 py-2 rounded hover:bg-blue-primary-hover lg-1000:px-4">Lihat Jas</a>
         </div>
     </div>
 

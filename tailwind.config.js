@@ -18,7 +18,8 @@ export default {
                 'inter': ['Inter', 'sans-serif']
             },
             colors: {
-                'blue-primary': '#171738'
+                'blue-primary': '#171738',
+                'blue-primary-hover': '#20204F'
             },
             screens: {
                 'sm-460': '460px',

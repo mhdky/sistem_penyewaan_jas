@@ -9,7 +9,8 @@
         @include('partials.card-product.index')
         @include('partials.choose-us.index')
         @include('partials.their-opinion.index')
+        @include('partials.footer.index')
 
-        <div class="bg-white h-screen mx-auto"></div>
+        {{-- <div class="bg-white h-screen mx-auto"></div> --}}
     </div>
 @endsection

@@ -14,7 +14,7 @@
                     {{-- name and message --}}
                     <div class="ml-4 mt-[10px] flex-[2]">
                         <p class="text-black text-sm font-bold">Effenril Agung</p>
-                        <p class="text-slate-600 text-sm mt-4">Uda dua kali pesan di sini, gak pernah kecewa, pula jasnya bagus2.</p>
+                        <p class="text-slate-600 text-sm font-medium mt-4">Uda dua kali pesan di sini, gak pernah kecewa, pula jasnya bagus2.</p>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                     {{-- name and message --}}
                     <div class="ml-4 mt-[10px] flex-[2]">
                         <p class="text-black text-sm font-bold">Niki Pranata</p>
-                        <p class="text-slate-600 text-sm mt-4">Pilihannya banyak ukuran jasnya pun lenkap, recommended banget.</p>
+                        <p class="text-slate-600 text-sm font-medium mt-4">Pilihannya banyak ukuran jasnya pun lenkap, recommended banget.</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     {{-- name and message --}}
                     <div class="ml-4 mt-[10px] flex-[2]">
                         <p class="text-black text-sm font-bold">Muhammad Ridwan</p>
-                        <p class="text-slate-600 text-sm mt-4">Tempatnya bersih, adem bisa dengan nyaman pilih jas yang diinginin, kakaknya yang jaga toko juga cantik, jadi makin betah lama-lama.</p>
+                        <p class="text-slate-600 text-sm font-medium mt-4">Tempatnya bersih, adem bisa dengan nyaman pilih jas yang diinginin, kakaknya yang jaga toko juga cantik, jadi makin betah lama-lama.</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     {{-- name and message --}}
                     <div class="ml-4 mt-[10px] flex-[2]">
                         <p class="text-black text-sm font-bold">Surya Darma</p>
-                        <p class="text-slate-600 text-sm mt-4">Pilihan jasnya banyak, kualitas bagus dan harga terjangkau.</p>
+                        <p class="text-slate-600 text-sm font-medium mt-4">Pilihan jasnya banyak, kualitas bagus dan harga terjangkau.</p>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                     {{-- name and message --}}
                     <div class="ml-4 mt-[10px] flex-[2]">
                         <p class="text-black text-sm font-bold">Cici Heny</p>
-                        <p class="text-slate-600 text-sm mt-4">Respon cepat dan pelayanannya memuaskanterima.</p>
+                        <p class="text-slate-600 text-sm font-medium mt-4">Respon cepat dan pelayanannya memuaskan.</p>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                     {{-- name and message --}}
                     <div class="ml-4 mt-[10px] flex-[2]">
                         <p class="text-black text-sm font-bold">Rahmat Raja</p>
-                        <p class="text-slate-600 text-sm mt-4">Tempat paling dicari untuk pakain pengantin.</p>
+                        <p class="text-slate-600 text-sm font-medium mt-4">Tempat paling dicari untuk pakain pengantin.</p>
                     </div>
                 </div>
             </div>

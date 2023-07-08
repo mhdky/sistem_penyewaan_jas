@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <a href="#" class="bg-slate-100 w-[115px] h-[38px] border border-slate-200 rounded-md mt-[30px] text-slate-600 text-[14px] text-center font-bold leading-[38px] mx-auto block lg-1000:mt-[55px]">See More</a>
+    <a href="#" class="bg-slate-100 w-[115px] h-[38px] border border-slate-200 rounded-md mt-[30px] text-slate-600 text-[14px] text-center font-bold leading-[35px] mx-auto block hover:bg-slate-200 lg-1000:mt-[55px]">See More</a>
 </div>
 
 {{-- kids suit --}}
@@ -103,5 +103,5 @@
         </div>
     </div>
 
-    <a href="#" class="bg-slate-100 w-[115px] h-[38px] border border-slate-200 rounded-md mt-[30px] text-slate-600 text-[14px] text-center font-bold leading-[38px] mx-auto block lg-1000:mt-[55px]">See More</a>
+    <a href="#" class="bg-slate-100 w-[115px] h-[38px] border border-slate-200 rounded-md mt-[30px] text-slate-600 text-[14px] text-center font-bold leading-[35px] mx-auto block hover:bg-slate-200 lg-1000:mt-[55px]">See More</a>
 </div>
