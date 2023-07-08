@@ -11,6 +11,9 @@
 
         {{-- list navbar --}}
         <ul class="mt-14">
+            <li>
+                <input type="text" placeholder="Search" disabled class="bg-blue-primary-hover w-[240px] mb-5 -ml-1 rounded-md border-none outline-none text-white focus:border-none focus:ring-0 placeholder:text-slate-200">
+            </li>
             <li><a href="/" class="text-white font-bold">Home</a></li>
             <li class="btnCategories my-3 flex items-center select-none">
                 <p class="text-white font-bold">Categories</p>
