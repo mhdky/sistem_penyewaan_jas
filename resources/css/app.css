@@ -18,7 +18,7 @@ body {
 }
 
 html {
-    @apply scroll-smooth
+    @apply scroll-smooth;
 }
 
 .listCategoryShow {
@@ -74,7 +74,7 @@ html {
 }
 
 .container-card-product-search::-webkit-scrollbar-thumb {
-    @apply bg-[#646464] rounded-sm;
+    @apply bg-blue-950 rounded-sm;
 }
 .container-card-product-search::-webkit-scrollbar {
     @apply w-2;

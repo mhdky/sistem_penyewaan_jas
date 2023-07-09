@@ -1,4 +1,4 @@
-<div class="mainSearch bg-[rgb(0,0,0,0.92)] fixed z-30 top-0 right-0 bottom-0 left-0 h-screen overflow-hidden hidden">
+<div class="mainSearch bg-blue-primary fixed z-30 top-0 right-0 bottom-0 left-0 h-screen overflow-hidden hidden">
     <div class="w-full h-full px-4 pb-5 flex flex-col md-768:px-6 lg-1000:px-10 lg-1240:px-[60px] lg-1365:w-[1239px] lg-1365:mx-auto lg-1365:px-1">
         {{-- search input --}}
         <div class="w-full py-4">
@@ -37,7 +37,12 @@
 
         <div class="container-card-product-search w-full h-full mt-5 pr-2 flex-[2] overflow-auto">
             <div class="w-full grid gap-10 grid-cols-2 sm-460:grid-cols-3 md-600:grid-cols-4 md-800:grid-cols-5 lg-1000:grid-cols-6">
-                
+                <a href="/" class="flex flex-col justify-between">
+                    {{-- img product --}}
+                    <img src="{{ asset('img/product-1.png') }}" alt="jas" class="w-full hfull">
+                    {{-- name product --}}
+                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
+                </a>                
             </div>
         </div>
     </div>
