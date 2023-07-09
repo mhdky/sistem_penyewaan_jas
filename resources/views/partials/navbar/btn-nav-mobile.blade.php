@@ -39,8 +39,8 @@
 
                     {{-- list drop down desktop --}}
                     <ul class="bg-violet-700 w-32 px-4 py-2 border border-violet-500 absolute z-[2] rounded-md">
-                        <li class="py-1"><a href="#" class="text-white text-sm font-bold hover:text-slate-100">Adult Suit</a></li>
-                        <li class="py-1"><a href="#" class="text-white text-sm font-bold hover:text-slate-100">Kid's Suit</a></li>
+                        <li class="py-1"><a href="/suit/adult" class="text-white text-sm font-bold hover:text-slate-100">Adult Suit</a></li>
+                        <li class="py-1"><a href="/suit/kids" class="text-white text-sm font-bold hover:text-slate-100">Kid's Suit</a></li>
                     </ul>
                 </div>                
             </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SuitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'title' => 'Ky-Jas | Jual & Sewa Jas Keren, Lengkap, Harga Bersahabat'
+    ]);
 });
+
+// suit
+Route::get('/suit/adult', [SuitController::class, 'index']);
+Route::get('/suit/kids', [SuitController::class, 'kids']);
 
 Route::middleware([
     'auth:sanctum',

@@ -20,8 +20,8 @@
                 <i class="arrowRight fa-solid fa-caret-right text-white ml-2"></i>
             </li>
             <div class="listCategory hidden">
-                <li class="mb-3 ml-3"><a href="#adult-suit" class="text-violet-200 font-bold">Adult Suit</a></li>
-                <li class="mb-3 ml-3"><a href="#kids-suit" class="text-violet-200 font-bold">Kid's Suit</a></li>
+                <li class="mb-3 ml-3"><a href="/suit/adult" class="text-violet-200 font-bold">Adult Suit</a></li>
+                <li class="mb-3 ml-3"><a href="/suit/kids" class="text-violet-200 font-bold">Kid's Suit</a></li>
             </div>
             <li class="mb-3"><a href="#" class="text-white font-bold">Rute</a></li>
             <li><a href="#" class="text-white font-bold">About</a></li>
