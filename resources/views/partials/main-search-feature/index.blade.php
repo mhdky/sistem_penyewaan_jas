@@ -1,4 +1,4 @@
-<div class="mainSearch bg-blue-primary fixed z-30 top-0 right-0 bottom-0 left-0 h-screen overflow-hidden hidden">
+<div class="mainSearch bg-blue-primary fixed z-30 w-screen h-screen overflow-hidden hidden">
     <div class="w-full h-full px-4 pb-5 flex flex-col md-768:px-6 lg-1000:px-10 lg-1240:px-[60px] lg-1365:w-[1239px] lg-1365:mx-auto lg-1365:px-1">
         {{-- search input --}}
         <div class="w-full py-4">
@@ -42,7 +42,7 @@
                     <img src="{{ asset('img/product-1.png') }}" alt="jas" class="w-full hfull">
                     {{-- name product --}}
                     <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
-                </a>                
+                </a>         
             </div>
         </div>
     </div>

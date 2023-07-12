@@ -20,6 +20,7 @@ burgerBtn.addEventListener('click', () => {
     containerContent.classList.toggle('containerContentTranslate');
     navbar.classList.toggle('navbarSticky');
     jumbotron.classList.toggle('jumbotronPtChange');
+    body.classList.toggle('bodeOverflow');
 });
 
 // nav dropdown desktop
@@ -36,10 +37,17 @@ closeDropDown.addEventListener('click', () => {
 // main search
 const mainSearch = document.querySelector('.mainSearch');
 const btnShowMainSearchDst = document.querySelector('.btnShowMainSearchDst');
-const btnShowMainSearchMbl = document.querySelector('.btnShowMainSearchMbl');
+const btnShowMainSearchMbl = document.querySelector('.btnShowMainSearchMbl'); ////////////
 const btnCloseMainSearch = document.querySelector('.btnCloseMainSearch');
 const body = document.querySelector('body');
 btnShowMainSearchMbl.addEventListener('click', () => {
+    line[0].classList.remove('lineBurgerBtnFt');
+    line[1].classList.remove('lineBurgerBtnSd');
+    line[2].classList.remove('lineBurgerBtnTh');
+    containerContent.classList.remove('containerContentTranslate');
+    navbar.classList.remove('navbarSticky');
+    jumbotron.classList.remove('jumbotronPtChange');
+    body.classList.remove('bodeOverflow');
     mainSearch.style.display = 'block';
     body.style.overflow = 'hidden';
     setTimeout(() => {
@@ -55,5 +63,5 @@ btnShowMainSearchDst.addEventListener('click', () => {
 });
 btnCloseMainSearch.addEventListener('click', () => {
     mainSearch.style.display = 'none';
-    body.style.overflow = 'auto';
+    body.style.overflow = '';
 });

@@ -13,6 +13,10 @@ body {
     overflow-x: hidden;
 }
 
+.bodeOverflow {
+    @apply overflow-hidden;
+}
+
 * {
     @apply font-inter;
 }
@@ -40,14 +44,17 @@ html {
 }
 
 .containerContentTranslate {
-    @apply translate-x-72 transition-all duration-300;
+    /* ini */
+    @apply translate-x-72 transition-all duration-300; 
 }
 
 .navbarSticky {
+    /* ini */
     @apply sticky top-0;
 }
 
 .jumbotronPtChange {
+    /* ini */
     @apply pt-10;
 }
 
