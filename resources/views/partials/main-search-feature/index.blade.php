@@ -43,6 +43,34 @@
                     {{-- name product --}}
                     <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
                 </a>         
+                <a href="/" class="flex flex-col justify-between">
+                    {{-- img product --}}
+                    <img src="{{ asset('img/product-5.png') }}" alt="jas" class="w-full hfull">
+                    {{-- name product --}}
+                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
+                </a>         
+                <a href="/" class="flex flex-col justify-between">
+                    {{-- img product --}}
+                    <img src="{{ asset('img/product-8.png') }}" alt="jas" class="w-full hfull">
+                    {{-- name product --}}
+                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
+                </a>       
+                <a href="/" class="flex flex-col justify-between">
+                    {{-- img product --}}
+                    <img src="{{ asset('img/product-5.png') }}" alt="jas" class="w-full hfull">
+                    {{-- name product --}}
+                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
+                </a> <a href="/" class="flex flex-col justify-between">
+                    {{-- img product --}}
+                    <img src="{{ asset('img/product-5.png') }}" alt="jas" class="w-full hfull">
+                    {{-- name product --}}
+                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
+                </a> <a href="/" class="flex flex-col justify-between">
+                    {{-- img product --}}
+                    <img src="{{ asset('img/product-5.png') }}" alt="jas" class="w-full hfull">
+                    {{-- name product --}}
+                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
+                </a>   
             </div>
         </div>
     </div>

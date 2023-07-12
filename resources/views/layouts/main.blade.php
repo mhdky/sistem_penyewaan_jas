@@ -18,5 +18,6 @@
     <script src="https://kit.fontawesome.com/209072fbdb.js" crossorigin="anonymous"></script>
 
     @stack('swiper-js')
+    @stack('jumbotron')
 </body>
 </html>

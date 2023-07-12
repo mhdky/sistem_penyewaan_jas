@@ -17,6 +17,10 @@
     @include('partials.main-search-feature.index')
 @endsection
 
+@push('jumbotron')
+    <script src="{{ asset('js/jumbotron.js') }}"></script>
+@endpush
+
 @push('swiper-style')
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
