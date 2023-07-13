@@ -90,3 +90,27 @@ html {
 .imgActiveBorder {
     @apply border bg-zinc-400
 }
+
+.sizeEtcHide {
+    @apply -translate-x-full;
+}
+
+.descriptionTextShow {
+    @apply -translate-x-full relative;
+}
+
+.paragraf {
+    padding-bottom: 12px;
+}
+.link {
+    color: #1d4ed8;
+}
+.link:hover {
+    border-bottom: 1px solid #1d4ed8;
+}
+.list {
+    list-style-type: disc;
+}
+.list-li {
+    margin-left: 20px;
+}

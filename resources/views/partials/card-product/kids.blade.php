@@ -10,37 +10,37 @@
 
         {{-- card product --}}
         <div class="w-full mt-8 grid gap-10 grid-cols-2 sm-460:grid-cols-3 md-600:grid-cols-4 md-800:grid-cols-5 lg-1000:grid-cols-6 lg-1000:mt-[75px]">
-            <a href="/" class="flex flex-col justify-between">
+            <a href="/this/suit" class="flex flex-col justify-between">
                 {{-- img product --}}
                 <img src="{{ asset('img/product-7.png') }}" alt="jas" class="w-full hfull">
                 {{-- name product --}}
                 <p class="h-16 font-bold mt-3 text-center">{{ Str::title('Dusky Lavender - ') . '3pkbt72' }}</p>
             </a>
-            <a href="/" class="flex flex-col justify-between">
+            <a href="/this/suit" class="flex flex-col justify-between">
                 {{-- img product --}}
                 <img src="{{ asset('img/product-8.png') }}" alt="jas" class="w-full hfull">
                 {{-- name product --}}
                 <p class="h-16 font-bold mt-3 text-center">{{ Str::title('Midnight Blue - ') . '5lnmf32' }}</p>
             </a>
-            <a href="/" class="flex flex-col justify-between">
+            <a href="/this/suit" class="flex flex-col justify-between">
                 {{-- img product --}}
                 <img src="{{ asset('img/product-9.png') }}" alt="jas" class="w-full hfull">
                 {{-- name product --}}
                 <p class="h-16 font-bold mt-3 text-center">{{ Str::title('Cobalt Blue - ') . '8cdku69' }}</p>
             </a>
-            <a href="/" class="flex flex-col justify-between">
+            <a href="/this/suit" class="flex flex-col justify-between">
                 {{-- img product --}}
                 <img src="{{ asset('img/product-10.png') }}" alt="jas" class="w-full hfull">
                 {{-- name product --}}
                 <p class="h-16 font-bold mt-3 text-center">{{ Str::title('Dusty Brown - ') . '4plcz08' }}</p>
             </a>
-            <a href="/" class="flex flex-col justify-between">
+            <a href="/this/suit" class="flex flex-col justify-between">
                 {{-- img product --}}
                 <img src="{{ asset('img/product-11.png') }}" alt="jas" class="w-full hfull">
                 {{-- name product --}}
                 <p class="h-16 font-bold mt-3 text-center">{{ Str::title('Steel Blue - ') . '8lmcu88' }}</p>
             </a>
-            <a href="/" class="flex flex-col justify-between">
+            <a href="/this/suit" class="flex flex-col justify-between">
                 {{-- img product --}}
                 <img src="{{ asset('img/product-12.png') }}" alt="jas" class="w-full hfull">
                 {{-- name product --}}

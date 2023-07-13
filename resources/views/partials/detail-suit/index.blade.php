@@ -33,43 +33,64 @@
         </div>
 
         {{-- container deskripsi jas --}}
-        <div class="w-full mt-12 md-768:mt-5 md-768:h-max md-768:flex-1 md-768:sticky md-768:top-[115px] lg-1000:top-[130px]">
+        <div class="w-full mt-12 overflow-hidden md-768:mt-5 md-768:h-max md-768:flex-1 md-768:sticky md-768:top-[115px] lg-1000:top-[130px]">
             {{-- nama jas --}}
             <h1 class="text-2xl font-bold border-b border-black pb-2">Black - 8ikje98</h1>
 
             {{-- container ukuran, bahan dll --}}
-            <div class="w-full mt-7">
-                {{-- ukuran --}}
-                <div class="flex items-center mb-5">
-                    {{-- keterangan --}}
-                    <p class="w-[117px] font-bold">Ukuran</p>
-                    <p>XL</p>
+            <div class="w-full mt-7 relative">
+                <div class="sizeEtc w-full transition-all duration-300">
+                    {{-- ukuran --}}
+                    <div class="flex items-center mb-5">
+                        {{-- keterangan --}}
+                        <p class="w-[117px] font-bold">Ukuran</p>
+                        <p>XL</p>
+                    </div>
+
+                    {{-- bahan --}}
+                    <div class="flex items-center mb-5">
+                        {{-- keterangan --}}
+                        <p class="w-[117px] font-bold">Bahan</p>
+                        <p>Wool</p>
+                    </div>
+
+                    {{-- status --}}
+                    <div class="flex items-center mb-5">
+                        {{-- keterangan --}}
+                        <p class="w-[117px] font-bold">Status</p>
+                        <p>Masih dalam pemesanan</p>
+                    </div>
+
+                    {{-- deskripsi --}}
+                    <div class="btnDescription flex items-center mb-8 group lg-1000:cursor-pointer">
+                        {{-- keterangan --}}
+                        <p class="w-[117px] font-bold">Deskripsi</p>
+                        <i class="fas fa-chevron-right text-sm group-hover:translate-x-1 duration-300"></i>
+                    </div>
                 </div>
 
-                {{-- bahan --}}
-                <div class="flex items-center mb-5">
-                    {{-- keterangan --}}
-                    <p class="w-[117px] font-bold">Bahan</p>
-                    <p>Wool</p>
-                </div>
+                {{-- isi deskripsi --}}
+                <div class="descriptionText w-full absolute -right-full top-0 transition-all duration-300">
+                    <div class="flex items-center">
+                        <i class="fas fa-arrow-left mr-4 closeDescription lg-1000:cursor-pointer"></i>
+                        <p class="font-bold">Deskripsi</p>
+                    </div>
 
-                {{-- status --}}
-                <div class="flex items-center mb-5">
-                    {{-- keterangan --}}
-                    <p class="w-[117px] font-bold">Status</p>
-                    <p>Masih dalam pemesanan</p>
+                    <div class="w-full mt-5 mb-7 text-sm">
+                        <p class="paragraf">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam rerum nobis quia dicta vero. Nemo optio iure <a href="#" class="link">Ini adalah link</a> consequuntur, ipsum dolor animi quam! Ducimus consectetur beatae reprehenderit cum porro aperiam labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, suscipit.</p>
+                        <p class="paragraf">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam rerum nobis quia dicta vero. Nemo optio iure <a href="#" class="link">Ini adalah link</a> consequuntur, ipsum dolor animi quam! Ducimus consectetur beatae reprehenderit cum porro aperiam labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, suscipit.</p>
+                        <p class="paragraf">
+                            <ul class="list">
+                                <li class="list-li">ke satu Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus sed quibusdam atque libero enim vitae beatae explicabo ex nostrum. Maxime vero ea, aspernatur ipsum error possimus. Vel obcaecati et id!</li>
+                                <li class="list-li">ke dua</li>
+                            </ul>
+                        </p>
+                    </div>
                 </div>
-
-                {{-- deskripsi --}}
-                <div class="flex items-center mb-8">
-                    {{-- keterangan --}}
-                    <p class="w-[117px] font-bold">Deskripsi</p>
-                    <i class="fas fa-chevron-right text-sm"></i>
-                </div>
-
-                {{-- tombol simpan ke sewa nanti --}}
-                <p class="w-full h-10 border border-black rounded-md text-sm flex justify-center items-center font-medium hover:bg-[#0000000a] lg-1000:cursor-pointer">Simpan ke sewa nanti</p>
             </div>
+
+            {{-- tombol simpan ke sewa nanti --}}
+            <p class="w-full h-10 border border-black rounded-md text-sm flex justify-center items-center font-medium hover:bg-[#0000000a] lg-1000:cursor-pointer">Simpan ke sewa nanti</p>
         </div>
     </div>
 </div>
