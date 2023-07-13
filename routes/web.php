@@ -21,8 +21,9 @@ Route::get('/', function () {
 });
 
 // suit
-Route::get('/suit/adult', [SuitController::class, 'index']);
-Route::get('/suit/kids', [SuitController::class, 'kids']);
+Route::get('/suit/adult', [SuitController::class, 'index']); // jas dewasa
+Route::get('/suit/kids', [SuitController::class, 'kids']); //jas anak
+Route::get('/this/suit', [SuitController::class, 'detailSuit']); //detail suit
 
 Route::middleware([
     'auth:sanctum',

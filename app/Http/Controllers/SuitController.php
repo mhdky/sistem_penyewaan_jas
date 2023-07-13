@@ -19,4 +19,11 @@ class SuitController extends Controller
             'title' => 'Ky-Jas | Jas Anak'
         ]);
     }
+
+    // detail suit
+    public function detailSuit() {
+        return view('suit.detail-suit', [
+            'title' => 'Black - 12iju91'
+        ]);
+    }
 }
