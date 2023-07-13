@@ -86,3 +86,7 @@ html {
 .container-card-product-search::-webkit-scrollbar {
     @apply w-2;
 }
+
+.imgActiveBorder {
+    @apply border bg-zinc-400
+}

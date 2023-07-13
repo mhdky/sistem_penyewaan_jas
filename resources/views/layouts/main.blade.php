@@ -19,5 +19,6 @@
 
     @stack('swiper-js')
     @stack('jumbotron')
+    @stack('img-active')
 </body>
 </html>
