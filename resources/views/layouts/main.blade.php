@@ -15,6 +15,9 @@
     @yield('main')
 
     <script src="{{ asset('js/script.js') }}"></script>
+    @auth
+        <script src="{{ asset('js/list-user.js') }}"></script>
+    @endauth
     <script src="https://kit.fontawesome.com/209072fbdb.js" crossorigin="anonymous"></script>
 
     @stack('swiper-js')
