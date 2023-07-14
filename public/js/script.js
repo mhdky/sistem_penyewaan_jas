@@ -75,3 +75,16 @@ showListUserMobile.addEventListener('click', () => {
 closeListUserMobile.addEventListener('click', () => {
     listUserMobile.style.display = 'none';
 });
+
+// list user Desktop
+const showListUserDesktop = document.querySelector('.showListUserDesktop');
+const listUserDesktop = document.querySelector('.listUserDesktop');
+const closeListUserDesktop = document.querySelector('.closeListUserDesktop');
+// show
+showListUserDesktop.addEventListener('click', () => {
+    listUserDesktop.style.display = 'block';
+});
+// hide
+closeListUserDesktop.addEventListener('click', () => {
+    listUserDesktop.style.display = 'none';
+});

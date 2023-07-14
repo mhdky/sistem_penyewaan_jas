@@ -94,11 +94,59 @@
         </ul>
     </div>
 
-    {{-- container register & login --}}
-    <div class="flex items-center">
-        {{-- login --}}
-        <a href="/login" class="text-white text-sm font-bold mr-3 hover:text-slate-100">Login</a>
-        {{-- register --}}
-        <a href="/register" class="bg-blue-primary px-4 py-2 rounded text-white text-sm font-bold hover:bg-blue-primary-hover">Register</a>
-    </div>
+    @auth
+        {{-- profile picture --}}
+        <div class="flex items-center gap-3 relative">
+            <p class="text-white text-sm font-bold">{{ Str::title(Str::limit(Auth::user()->name, 14)) }}</p>
+
+            <div class="showListUserDesktop w-9 h-9 bg-violet-600 rounded-full overflow-hidden cursor-pointer">
+                <img src="{{ asset('img/profile.jpeg') }}" alt="profule" class="w-full h-full object-cover">
+            </div>
+
+            {{-- container list user --}}
+            <div class="listUserDesktop absolute z-30 top-0 right-0 hidden">
+                <div class="relative">
+                    {{-- close list user Desktop --}}
+                    <div class="closeListUserDesktop bg-[#0000004d] fixed z-20 top-0 right-0 bottom-0 left-0"></div>
+
+                    {{-- list user Desktop --}}
+                    <div class="bg-violet-700 w-[232px] border border-violet-500 py-2 rounded-lg absolute z-30 top-14 right-0 overflow-hidden">
+                        <a href="#" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
+                            <img src="{{ asset('img/setting.svg') }}" alt="icon" class="w-6 h-6">
+                            <p class="text-white text-sm font-bold">Pengaturan akun</p>
+                        </a>
+
+                        <a href="#" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
+                            <img src="{{ asset('img/suit-tie.svg') }}" alt="icon" class="w-6 h-6">
+                            <p class="text-white text-sm font-bold">Jas yang disewa</p>
+                        </a>
+
+                        <a href="#" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
+                            <img src="{{ asset('img/watch-later.svg') }}" alt="icon" class="w-6 h-6">
+                            <p class="text-white text-sm font-bold">Sewa nanti</p>
+                        </a>
+
+                        <span class="bg-violet-500 w-full h-[1px] block mt-2"></span>
+
+                        <form action="/logout" method="post" class="mt-2">
+                            @csrf
+                            <button type="submit" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
+                                <img src="{{ asset('img/logout.svg') }}" alt="icon" class="w-6 h-6">
+                                <p class="text-white text-sm font-bold">Log out</p>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @else
+        {{-- container register & login --}}
+        <div class="flex items-center">
+            {{-- login --}}
+            <a href="/login" class="text-white text-sm font-bold mr-3 hover:text-slate-100">Login</a>
+            {{-- register --}}
+            <a href="/register" class="bg-blue-primary px-4 py-2 rounded text-white text-sm font-bold hover:bg-blue-primary-hover">Register</a>
+        </div>
+    @endauth
+
 </div>
