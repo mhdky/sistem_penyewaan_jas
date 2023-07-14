@@ -1,8 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+        {{-- logo --}}
+        <a href="/" class="w-full flex justify-center text-2xl text-blue-primary font-hanuman font-bold">Ky-Jas</a>
 
         <x-validation-errors class="mb-4" />
 
@@ -12,37 +11,42 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('login') }}">
+        <h1 class="text-white text-lg font-bold my-5 sm-580:mt-[27px] sm-580:mb-[19px]">Welcome back! please Login</h1>
+
+        <form method="POST" action="{{ route('login') }}" autocomplete="off">
             @csrf
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <div class="w-full mb-5 flex justify-between items-center border-b border-white sm-580:mb-6">
+                <img src="{{ asset('img/at.svg') }}" alt="logo" class="w-5 h-5">
+                <x-input id="email" class="w-full flex-[2] text-white text-sm font-bold placeholder:text-white bg-transparent focus:border-none focus:ring-0" type="email" name="email" placeholder="Email" :value="old('email')" required autofocus autocomplete="username" />
             </div>
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+            <div class="w-full mb-5 flex justify-between items-center border-b border-white sm-580:mb-6">
+                <img src="{{ asset('img/lock.svg') }}" alt="logo" class="w-5 h-5">
+                <x-input id="password" class="w-full flex-[2] text-white text-sm font-bold placeholder:text-white bg-transparent focus:border-none focus:ring-0" type="password" name="password" placeholder="Password" required autocomplete="current-password" />
             </div>
 
-            <div class="block mt-4">
+            <div class="flex justify-between items-center mt-4 sm-580:mb-6">
                 <label for="remember_me" class="flex items-center">
                     <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm text-white font-bold">{{ __('Remember me') }}</span>
                 </label>
-            </div>
 
-            <div class="flex items-center justify-end mt-4">
+                {{-- <a href="/forgot-password" class="text-white text-sm font-bold">Forgot password</a> --}}
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                    <a class="text-white text-sm font-bold hover:text-slate-100" href="{{ route('password.request') }}">
+                        {{ __('Forgot password') }}
                     </a>
                 @endif
+            </div>
 
-                <x-button class="ml-4">
+            <div class="flex items-center justify-end mt-4 sm-580:mb-6">
+                <x-button class="bg-[#DEDEDE] w-full h-[35px] rounded-lg">
                     {{ __('Log in') }}
                 </x-button>
             </div>
+
+            <p class="text-white text-sm mt-4 text-center">Don't have an acount? <a href="/register" class="font-bold hover:text-slate-100">Register</a></p>
         </form>
     </x-authentication-card>
 </x-guest-layout>
