@@ -1,0 +1,9 @@
+<p class="paragraf">masukan tulisan</p>
+
+<a href="#masukan link" class="link">Ini adalah link</a>
+
+<ul class="list">
+	<li class="list-li">Masukan tulisan</li>
+</ul>
+
+<strong>masukan tulisan</strong>

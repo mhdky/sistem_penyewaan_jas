@@ -58,7 +58,7 @@
                     <div class="flex items-center mb-5">
                         {{-- keterangan --}}
                         <p class="w-[117px] font-bold">Status</p>
-                        <p>Masih dalam pemesanan</p>
+                        <p>Masih dalam penyewaan</p>
                     </div>
 
                     {{-- deskripsi --}}
@@ -71,14 +71,14 @@
 
                 {{-- isi deskripsi --}}
                 <div class="descriptionText w-full absolute -right-full top-0 transition-all duration-300">
-                    <div class="flex items-center">
-                        <i class="fas fa-arrow-left mr-4 closeDescription lg-1000:cursor-pointer"></i>
-                        <p class="font-bold">Deskripsi</p>
+                    <div class="closeDescription w-max flex items-center lg-1000:cursor-pointer">
+                        <i class="fas fa-arrow-left mr-4"></i>
+                        <p class="font-bold">Kembali</p>
                     </div>
 
                     <div class="w-full mt-5 mb-7 text-sm">
                         <p class="paragraf">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam rerum nobis quia dicta vero. Nemo optio iure <a href="#" class="link">Ini adalah link</a> consequuntur, ipsum dolor animi quam! Ducimus consectetur beatae reprehenderit cum porro aperiam labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, suscipit.</p>
-                        <p class="paragraf">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam rerum nobis quia dicta vero. Nemo optio iure <a href="#" class="link">Ini adalah link</a> consequuntur, ipsum dolor animi quam! Ducimus consectetur beatae reprehenderit cum porro aperiam labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, suscipit.</p>
+                        <p class="paragraf">Lorem ipsum <strong>dolor</strong>, sit amet consectetur adipisicing elit. Quisquam rerum nobis quia dicta vero. Nemo optio iure <a href="#" class="link">Ini adalah link</a> consequuntur, ipsum dolor animi quam! Ducimus consectetur beatae reprehenderit cum porro aperiam labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, suscipit.</p>
                         <p class="paragraf">
                             <ul class="list">
                                 <li class="list-li">ke satu Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus sed quibusdam atque libero enim vitae beatae explicabo ex nostrum. Maxime vero ea, aspernatur ipsum error possimus. Vel obcaecati et id!</li>
@@ -97,4 +97,7 @@
 
 @push('img-active')
     <script src="{{ asset('js/img-active.js') }}"></script>
+@endpush
+@push('description')
+    <script src="{{ asset('js/description.js') }}"></script>
 @endpush

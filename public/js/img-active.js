@@ -18,26 +18,3 @@ function ubahGambar(gambar) {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
-
-// discription
-const btnDescription = document.querySelector('.btnDescription');
-const sizeEtc = document.querySelector('.sizeEtc');
-const descriptionText = document.querySelector('.descriptionText');
-btnDescription.addEventListener('click', () => {
-    sizeEtc.classList.add('sizeEtcHide');
-    setTimeout(() => {
-        sizeEtc.style.display = 'none';
-    }, 100);
-    descriptionText.classList.add('descriptionTextShow');
-});
-const closeDescription = document.querySelector('.closeDescription');
-closeDescription.addEventListener('click', () => {
-    sizeEtc.classList.remove('sizeEtcHide');
-    sizeEtc.style.display = 'block';
-
-    descriptionText.style.display = 'none';
-    descriptionText.classList.remove('descriptionTextShow');
-    setTimeout(() => {
-        descriptionText.style.display = 'block';
-    }, 100);
-});
