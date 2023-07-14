@@ -3,7 +3,7 @@
         {{-- logo --}}
         <a href="/" class="w-full flex justify-center text-2xl text-blue-primary font-hanuman font-bold">Ky-Jas</a>
 
-        <x-validation-errors class="mb-4" />
+        <x-validation-errors class="my-4" />
 
         <h1 class="text-white text-lg font-bold my-5 sm-580:mt-[27px] sm-580:mb-[19px]">Register</h1>
 

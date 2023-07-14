@@ -13,7 +13,7 @@
             </div>
         @endif
 
-        <x-validation-errors class="mb-4" />
+        <x-validation-errors class="my-4" />
 
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
