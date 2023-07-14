@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'hello') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,5 +18,8 @@
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
+
+        @stack('show-password')
+        @stack('show-confirm-password')
     </body>
 </html>

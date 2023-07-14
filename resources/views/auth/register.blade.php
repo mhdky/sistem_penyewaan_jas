@@ -22,12 +22,34 @@
 
             <div class="w-full mb-5 flex justify-between items-center border-b border-white sm-580:mb-6">
                 <img src="{{ asset('img/lock.svg') }}" alt="logo" class="w-5 h-5">
-                <x-input id="password" class="w-full flex-[2] text-white text-sm font-bold placeholder:text-white bg-transparent focus:border-none focus:ring-0" type="password" name="password" placeholder="Password" required autocomplete="new-password" />
+                <x-input id="inputPassword" class="w-full flex-[2] text-white text-sm font-bold placeholder:text-white bg-transparent focus:border-none focus:ring-0" type="password" name="password" placeholder="Password" required autocomplete="new-password" />
+            
+                {{-- password show and hide --}}
+                <div class="w-5 h-5 relative flex justify-between items-center">
+                    <img src="{{ asset('img/eye.svg') }}" alt="eye" class="w-5 h-5">
+                    <div class="lineEyePass absolute z-[2] right-2 -rotate-45 flex transition-all duration-300 overflow-hidden">
+                        <div class="bg-violet-600 w-[2px] h-5"></div>
+                        <div class="bg-white w-[2px] h-5"></div>
+                    </div>
+
+                    <input type="checkbox" class="opacity-0 absolute z-[3] right-[3px] lg-1000:cursor-pointer" onclick="checkPassword()">
+                </div>
             </div>
 
             <div class="w-full mb-5 flex justify-between items-center border-b border-white sm-580:mb-6">
                 <img src="{{ asset('img/lock.svg') }}" alt="logo" class="w-5 h-5">
-                <x-input id="password_confirmation" class="w-full flex-[2] text-white text-sm font-bold placeholder:text-white bg-transparent focus:border-none focus:ring-0" type="password" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password" />
+                <x-input id="confirmPassword" class="w-full flex-[2] text-white text-sm font-bold placeholder:text-white bg-transparent focus:border-none focus:ring-0" type="password" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password" />
+            
+                {{-- password show and hide --}}
+                <div class="w-5 h-5 relative flex justify-between items-center">
+                    <img src="{{ asset('img/eye.svg') }}" alt="eye" class="w-5 h-5">
+                    <div class="lineEyeConfirmPass absolute z-[2] right-2 -rotate-45 flex transition-all duration-300 overflow-hidden">
+                        <div class="bg-violet-600 w-[2px] h-5"></div>
+                        <div class="bg-white w-[2px] h-5"></div>
+                    </div>
+
+                    <input type="checkbox" class="opacity-0 absolute z-[3] right-[3px] lg-1000:cursor-pointer" onclick="checkConfirmPassword()">
+                </div>
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -56,4 +78,11 @@
             <p class="text-white text-sm mt-4 text-center">Have an acount? <a href="/login" class="font-bold hover:text-slate-100">Login</a></p>
         </form>
     </x-authentication-card>
+
+    @push('show-password')
+        <script src="{{ asset('js/show-password.js') }}"></script>
+    @endpush
+    @push('show-confirm-password')
+        <script src="{{ asset('js/show-confirm-password.js') }}"></script>
+    @endpush
 </x-guest-layout>
