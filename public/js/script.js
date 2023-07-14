@@ -62,3 +62,16 @@ btnCloseMainSearch.addEventListener('click', () => {
     mainSearch.style.display = 'none';
     body.style.overflow = '';
 });
+
+// list user mobile
+const showListUserMobile = document.querySelector('.showListUserMobile');
+const listUserMobile = document.querySelector('.listUserMobile');
+const closeListUserMobile = document.querySelector('.closeListUserMobile');
+// show
+showListUserMobile.addEventListener('click', () => {
+    listUserMobile.style.display = 'block';
+});
+// hide
+closeListUserMobile.addEventListener('click', () => {
+    listUserMobile.style.display = 'none';
+});
