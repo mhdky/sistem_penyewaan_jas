@@ -16,7 +16,7 @@
             <p class="text-white test-sm font-bold hidden">{{ Str::title(Str::limit('Muhammad Rizki', 14)) }}</p>
 
             <div class="showListUserMobile w-9 h-9 bg-violet-600 rounded-full overflow-hidden">
-                <img src="{{ asset('img/profile.jpeg') }}" alt="profule" class="w-full h-full object-cover">
+                <img src="{{ $profil }}" alt="profile" class="w-full h-full object-cover">
             </div>
 
             {{-- container list user --}}
@@ -75,7 +75,7 @@
             <li class="btnShowMainSearchDst flex items-center"><i class="fas fa-search text-white text-sm mr-5 cursor-pointer hover:text-slate-100 md-768:mt-2"></i></li>
             <li class="md-768:mt-1"><a href="/" class="text-white text-sm font-bold mr-5 hover:text-slate-100">Home</a></li>
             <li class="showDropDown text-white text-sm font-bold mr-5 select-none md-768:mt-[6px] cursor-pointer hover:text-slate-100">Categories</li>
-            <li class="md-768:mt-1"><a href="/" class="text-white text-sm font-bold mr-5 hover:text-slate-100">Rute</a></li>
+            <li class="md-768:mt-1"><a href="https://goo.gl/maps/dQUVpo7tLJPq6LpdA" class="text-white text-sm font-bold mr-5 hover:text-slate-100">Rute</a></li>
             <li class="md-768:mt-1"><a href="/" class="text-white text-sm font-bold mr-5 hover:text-slate-100">About</a></li>
 
             {{-- category drop down --}}
@@ -100,7 +100,7 @@
             <p class="text-white text-sm font-bold">{{ Str::title(Str::limit(Auth::user()->name, 14)) }}</p>
 
             <div class="showListUserDesktop w-9 h-9 bg-violet-600 rounded-full overflow-hidden cursor-pointer">
-                <img src="{{ asset('img/profile.jpeg') }}" alt="profule" class="w-full h-full object-cover">
+                <img src="{{ $profil }}" alt="profile" class="w-full h-full object-cover">
             </div>
 
             {{-- container list user --}}

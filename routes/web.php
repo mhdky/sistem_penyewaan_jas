@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\SuitController;
+use Creativeorange\Gravatar\Facades\Gravatar;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +17,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        $email = Auth::user()->email;
+        $profilePhotoUrl = Gravatar::get($email);
+    } else {
+        $profilePhotoUrl = null;
+    }
+
     return view('home', [
-        'title' => 'Ky-Jas | Jual & Sewa Jas Keren, Lengkap, Harga Bersahabat'
+        'title' => 'Ky-Jas | Jual & Sewa Jas Keren, Lengkap, Harga Bersahabat',
+        'profil' => $profilePhotoUrl
     ]);
 });
 

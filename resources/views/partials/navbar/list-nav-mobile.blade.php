@@ -2,12 +2,14 @@
     {{-- container profile & list navbar --}}
     <div class="w-full mt-20 px-7">
         {{-- profile --}}
-        <div class="flex items-center">
-            <div class="w-12 h-12 bg-violet-600 rounded-full overflow-hidden">
-                <img src="{{ asset('img/profile.jpeg') }}" alt="profule" class="w-full h-full object-cover">
+        @auth
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-violet-600 rounded-full overflow-hidden">
+                    <img src="{{ $profil }}" alt="profule" class="w-full h-full object-cover">
+                </div>
+                <p class="text-white text-lg font-bold ml-5">{{ Str::title(Str::limit(Auth::user()->name, 12))}}</p>
             </div>
-            <p class="text-white text-lg font-bold ml-5">Muhammad Rizki</p>
-        </div>
+        @endauth
 
         {{-- list navbar --}}
         <ul class="mt-14">
@@ -23,7 +25,7 @@
                 <li class="mb-3 ml-3"><a href="/suit/adult" class="text-violet-200 font-bold">Adult Suit</a></li>
                 <li class="mb-3 ml-3"><a href="/suit/kids" class="text-violet-200 font-bold">Kid's Suit</a></li>
             </div>
-            <li class="mb-3"><a href="#" class="text-white font-bold">Rute</a></li>
+            <li class="mb-3"><a href="https://goo.gl/maps/dQUVpo7tLJPq6LpdA" class="text-white font-bold">Rute</a></li>
             <li><a href="#" class="text-white font-bold">About</a></li>
         </ul>
     </div>
