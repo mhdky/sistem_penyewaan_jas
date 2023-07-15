@@ -19,7 +19,9 @@ export default {
             },
             colors: {
                 'blue-primary': '#171738',
-                'blue-primary-hover': '#20204F'
+                'blue-primary-hover': '#20204F',
+                'black-transparent': '#0000004d',
+                'violet-secondary': '#7E3AE9'
             },
             screens: {
                 'sm-460': '460px',

@@ -15,6 +15,9 @@
     </div>
     
     @include('partials.main-search-feature.index')
+
+    {{-- about --}}
+    @include('partials.about.index')
 @endsection
 
 @push('jumbotron')
@@ -48,4 +51,8 @@
             },
         });
     </script>
+@endpush
+
+@push('about')
+    <script src="{{ asset('js/about.js') }}"></script>
 @endpush

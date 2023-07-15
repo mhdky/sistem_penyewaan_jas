@@ -24,5 +24,6 @@
     @stack('jumbotron')
     @stack('img-active')
     @stack('description')
+    @stack('about')
 </body>
 </html>

@@ -26,7 +26,7 @@
                 <li class="mb-3 ml-3"><a href="/suit/kids" class="text-violet-200 font-bold">Kid's Suit</a></li>
             </div>
             <li class="mb-3"><a href="https://goo.gl/maps/dQUVpo7tLJPq6LpdA" class="text-white font-bold">Rute</a></li>
-            <li><a href="#" class="text-white font-bold">About</a></li>
+            <li><div class="btnAbout text-white font-bold">About</div></li>
         </ul>
     </div>
 </div>
