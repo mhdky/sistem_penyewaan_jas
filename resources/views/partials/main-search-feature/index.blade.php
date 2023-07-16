@@ -1,4 +1,4 @@
-<div class="mainSearch bg-blue-primary fixed z-30 w-screen h-screen overflow-hidden hidden">
+<div class="mainSearch bg-[#151525e5] backdrop-blur-lg fixed z-30 w-screen h-screen overflow-hidden hidden">
     <div class="w-full h-full px-4 pb-5 flex flex-col md-768:px-6 lg-1000:px-10 lg-1240:px-[60px] lg-1365:w-[1239px] lg-1365:mx-auto lg-1365:px-1">
         {{-- search input --}}
         <div class="w-full py-4">
@@ -29,7 +29,7 @@
                 <div class="bg-violet-600 w-[32px] h-[32px] rounded-md flex justify-center items-center">
                     <i class="fas fa-search text-neutral-200"></i>
                 </div>
-                <div class="loading bg-violet-600 w-[32px] h-[32px] rounded-md hidden justify-center items-center absolute right-[9px]">
+                <div class="loading bg-violet-600 w-[32px] h-[32px] rounded-md hidden justify-center items-center absolute right-[8px]">
                     <img src="{{ asset('img/loading.gif') }}" alt="">
                 </div>
             </div>
