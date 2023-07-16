@@ -121,3 +121,6 @@
 @push('description')
     <script src="{{ asset('js/description.js') }}"></script>
 @endpush
+@push('live-search')
+    <script src="{{ asset('js/live-search.js') }}"></script>
+@endpush

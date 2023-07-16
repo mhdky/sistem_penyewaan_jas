@@ -56,3 +56,7 @@
 @push('about')
     <script src="{{ asset('js/about.js') }}"></script>
 @endpush
+
+@push('live-search')
+    <script src="{{ asset('js/live-search.js') }}"></script>
+@endpush

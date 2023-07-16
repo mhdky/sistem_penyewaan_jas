@@ -115,3 +115,19 @@ html {
     margin-left: 20px;
     padding-bottom: 8px;
 }
+
+.linkMainSearch {
+    @apply flex flex-col justify-between;
+}
+
+.imgMainSearch {
+    @apply w-full h-max;
+}
+
+.pMainSearch {
+    @apply h-16 font-bold mt-3 text-neutral-200 text-center;
+}
+
+.noData {
+    @apply w-full h-full absolute flex justify-center text-neutral-200 items-center;
+}

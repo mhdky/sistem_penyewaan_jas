@@ -25,5 +25,6 @@
     @stack('img-active')
     @stack('description')
     @stack('about')
+    @stack('live-search')
 </body>
 </html>

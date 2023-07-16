@@ -25,53 +25,18 @@
 
             {{-- input search --}}
             <div class="bg-neutral-200 w-full h-[50px] mt-4 pr-2 rounded-md flex justify-between items-center overflow-hidden relative">
-                <input type="text" name="search" id="search" placeholder="Search" autocomplete="off" class="inputMainSearch bg-transparent w-full flex-[2] border-none outline-none focus:ring-0 lg-1000:pl-5">
+                <input type="text" name="search" id="search" placeholder="Search" autocomplete="off" class="searchInput inputMainSearch bg-transparent w-full flex-[2] border-none outline-none focus:ring-0 lg-1000:pl-5">
                 <div class="bg-violet-600 w-[32px] h-[32px] rounded-md flex justify-center items-center">
                     <i class="fas fa-search text-neutral-200"></i>
                 </div>
-                <div class="bg-violet-600 w-[32px] h-[32px] rounded-md hidden justify-center items-center absolute right-[9px]">
+                <div class="loading bg-violet-600 w-[32px] h-[32px] rounded-md hidden justify-center items-center absolute right-[9px]">
                     <img src="{{ asset('img/loading.gif') }}" alt="">
                 </div>
             </div>
         </div>
 
-        <div class="container-card-product-search w-full h-full mt-5 pr-2 flex-[2] overflow-auto">
-            <div class="w-full grid gap-10 grid-cols-2 sm-460:grid-cols-3 md-600:grid-cols-4 md-800:grid-cols-5 lg-1000:grid-cols-6">
-                <a href="/" class="flex flex-col justify-between">
-                    {{-- img product --}}
-                    <img src="{{ asset('img/product-1.png') }}" alt="jas" class="w-full hfull">
-                    {{-- name product --}}
-                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
-                </a>         
-                <a href="/" class="flex flex-col justify-between">
-                    {{-- img product --}}
-                    <img src="{{ asset('img/product-5.png') }}" alt="jas" class="w-full hfull">
-                    {{-- name product --}}
-                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
-                </a>         
-                <a href="/" class="flex flex-col justify-between">
-                    {{-- img product --}}
-                    <img src="{{ asset('img/product-8.png') }}" alt="jas" class="w-full hfull">
-                    {{-- name product --}}
-                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
-                </a>       
-                <a href="/" class="flex flex-col justify-between">
-                    {{-- img product --}}
-                    <img src="{{ asset('img/product-5.png') }}" alt="jas" class="w-full hfull">
-                    {{-- name product --}}
-                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
-                </a> <a href="/" class="flex flex-col justify-between">
-                    {{-- img product --}}
-                    <img src="{{ asset('img/product-5.png') }}" alt="jas" class="w-full hfull">
-                    {{-- name product --}}
-                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
-                </a> <a href="/" class="flex flex-col justify-between">
-                    {{-- img product --}}
-                    <img src="{{ asset('img/product-5.png') }}" alt="jas" class="w-full hfull">
-                    {{-- name product --}}
-                    <p class="h-16 font-bold mt-3 text-neutral-200 text-center">{{ Str::title('Black - ') . '8ikje98' }}</p>
-                </a>   
-            </div>
+        <div class="container-card-product-search w-full h-full mt-5 pr-2 flex-[2] overflow-auto relative">
+            <div class="searchResult w-full grid gap-10 grid-cols-2 sm-460:grid-cols-3 md-600:grid-cols-4 md-800:grid-cols-5 lg-1000:grid-cols-6"></div>            
         </div>
     </div>
 </div>

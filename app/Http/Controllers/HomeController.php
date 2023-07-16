@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    // home
     public function index() {
         if (Auth::check()) {
             $email = Auth::user()->email;
@@ -25,5 +26,12 @@ class HomeController extends Controller
             'adults' => $adults,
             'kids' => $kids,
         ]);
+    }
+
+    // live search
+    public function search($searchText) {
+        $suits = Suit::where('name', 'like', '%'.$searchText.'%')->orWhere('description', 'like', '%'.$searchText.'%')->get();
+
+        return response()->json($suits);
     }
 }

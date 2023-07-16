@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// home
 Route::get('/', [HomeController::class, 'index']);
+
+// data for live search
+Route::get('/sdjfqiaaweq112/{searchText}', [HomeController::class, 'search']);
 
 // suit
 Route::get('/suit/adult', [SuitController::class, 'index']); // jas dewasa
