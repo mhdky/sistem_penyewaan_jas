@@ -76,7 +76,7 @@
             <li class="md-768:mt-1"><a href="/" class="text-white text-sm font-bold mr-5 hover:text-slate-100">Home</a></li>
             <li class="showDropDown text-white text-sm font-bold mr-5 select-none md-768:mt-[6px] cursor-pointer hover:text-slate-100">Categories</li>
             <li class="md-768:mt-1"><a href="https://goo.gl/maps/dQUVpo7tLJPq6LpdA" class="text-white text-sm font-bold mr-5 hover:text-slate-100">Rute</a></li>
-            <li class="btnAboutDesktop md-768:mt-1"><div class="text-white text-sm font-bold mr-5 hover:text-slate-100 lg-1000:cursor-pointer">About</div></li>
+            <li class="btnAboutDesktop md-768:mt-[6px]"><div class="text-white text-sm font-bold mr-5 hover:text-slate-100 lg-1000:cursor-pointer">About</div></li>
 
             {{-- category drop down --}}
             <div class="listDropDown absolute top-8 left-24 hidden">
@@ -96,13 +96,14 @@
 
     @auth
         {{-- profile picture --}}
-        <div class="flex items-center gap-3 relative">
-            <p class="text-white text-sm font-bold">{{ Str::title(Str::limit(Auth::user()->name, 14)) }}</p>
+        <div class="bg-[#853dfa] py-1 -mt-1 px-3 border border-violet-500 rounded-2xl flex items-center gap-2 relative hover:bg-violet-600">
+            <p class="text-white text-[12px] font-bold cursor-pointer">{{ Str::title(Str::limit(Auth::user()->name, 14)) }}</p>
 
-            <div class="showListUserDesktop w-9 h-9 bg-violet-600 rounded-full overflow-hidden cursor-pointer">
+            <div class="w-[24px] h-[24px] bg-violet-600 rounded-full overflow-hidden cursor-pointer">
                 <img src="{{ $profil }}" alt="profil" class="w-full h-full object-cover">
             </div>
 
+            <div class="showListUserDesktop w-full h-full absolute right-0 rounded-2xl cursor-pointer"></div>
             {{-- container list user --}}
             <div class="listUserDesktop absolute z-30 top-0 right-0 hidden">
                 <div class="relative">
