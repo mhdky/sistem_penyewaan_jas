@@ -27,6 +27,13 @@
 
                     {{-- list user mobile --}}
                     <div class="bg-violet-700 w-[232px] border border-violet-500 py-2 rounded-lg absolute z-30 top-14 right-0 overflow-hidden">
+                        @can('admin')
+                            <a href="#" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
+                                <img src="{{ asset('img/dashboard.svg') }}" alt="icon" class="w-6 h-6">
+                                <p class="text-white text-sm font-bold">Admin dashboard</p>
+                            </a>
+                        @endcan
+
                         <a href="#" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
                             <img src="{{ asset('img/setting.svg') }}" alt="icon" class="w-6 h-6">
                             <p class="text-white text-sm font-bold">Pengaturan akun</p>
@@ -112,6 +119,13 @@
 
                     {{-- list user Desktop --}}
                     <div class="bg-violet-700 w-[232px] border border-violet-500 py-2 rounded-lg absolute z-30 top-14 right-0 overflow-hidden">
+                        @can('admin')
+                            <a href="#" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
+                                <img src="{{ asset('img/dashboard.svg') }}" alt="icon" class="w-6 h-6">
+                                <p class="text-white text-sm font-bold">Admin Dashboard</p>
+                            </a>
+                        @endcan
+
                         <a href="#" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
                             <img src="{{ asset('img/setting.svg') }}" alt="icon" class="w-6 h-6">
                             <p class="text-white text-sm font-bold">Pengaturan akun</p>
