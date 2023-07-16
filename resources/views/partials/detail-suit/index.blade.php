@@ -54,7 +54,7 @@
         {{-- container deskripsi jas --}}
         <div class="w-full mt-12 overflow-hidden md-768:mt-5 md-768:h-max md-768:flex-1 md-768:sticky md-768:top-[115px] lg-1000:top-[130px]">
             {{-- nama jas --}}
-            <h1 class="text-2xl font-bold border-b border-black pb-2">{{ $suit->name . ' - ' . $suit->code }}</h1>
+            <h1 class="text-2xl font-bold border-b border-black pb-2">{{ $suit->name . ' - ' . Str::lower($suit->code) }}</h1>
 
             {{-- container ukuran, bahan dll --}}
             <div class="w-full mt-7 relative">

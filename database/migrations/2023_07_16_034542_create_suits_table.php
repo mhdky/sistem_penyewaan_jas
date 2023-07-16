@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('picture_4')->nullable();
             $table->string('picture_5')->nullable();
             $table->string('name');
-            $table->string('code');
+            $table->string('code', 7)->unique();
             $table->string('size');
             $table->string('material');
             $table->text('description');

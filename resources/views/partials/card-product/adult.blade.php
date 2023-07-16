@@ -11,11 +11,11 @@
         {{-- card product --}}
         <div class="w-full mt-8 grid gap-10 grid-cols-2 sm-460:grid-cols-3 md-600:grid-cols-4 md-800:grid-cols-5 lg-1000:grid-cols-6 lg-1000:mt-[75px]">
             @foreach ($adults as $adult)
-                <a href="/this/suit/{{ $adult->name . '/' . $adult->code}}" class="flex flex-col justify-between">
+                <a href="/this/suit/{{ Str::lower($adult->name) . '/' . Str::lower($adult->code)}}" class="flex flex-col justify-between">
                     {{-- img product --}}
                     <img src="{{ asset($adult->main_picture) }}" alt="jas" class="w-full hfull">
                     {{-- name product --}}
-                    <p class="h-16 font-bold mt-3 text-center">{{ Str::title($adult->name . ' - ') . $adult->code }}</p>
+                    <p class="h-16 font-bold mt-3 text-center">{{ Str::title($adult->name . ' - ') . Str::lower($adult->code) }}</p>
                 </a>
             @endforeach
         </div>
