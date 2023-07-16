@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Suit;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,10 +17,13 @@ class SuitController extends Controller
         } else {
             $profilePhotoUrl = null;
         }
+
+        $adults = Suit::where('category_id', 1)->latest()->get();
         
         return view('suit.index', [
             'title' => 'Ky-Jas | Jas Dewasa',
-            'profil' => $profilePhotoUrl
+            'profil' => $profilePhotoUrl,
+            'adults' => $adults,
         ]);
     }
 
@@ -32,14 +36,19 @@ class SuitController extends Controller
             $profilePhotoUrl = null;
         }
 
+        $kids = Suit::where('category_id', 2)->latest()->get();
+
         return view('suit.index', [
             'title' => 'Ky-Jas | Jas Anak',
-            'profil' => $profilePhotoUrl
+            'profil' => $profilePhotoUrl,
+            'kids' => $kids,
         ]);
     }
 
     // detail suit
-    public function detailSuit() {
+    public function detailSuit($name, $code) {
+        $suit = Suit::where('name', $name)->where('code', $code)->first();
+
         if (Auth::check()) {
             $email = Auth::user()->email;
             $profilePhotoUrl = Gravatar::get($email);
@@ -49,7 +58,9 @@ class SuitController extends Controller
 
         return view('suit.detail-suit', [
             'title' => 'Black - 12iju91',
-            'profil' => $profilePhotoUrl
+            'profil' => $profilePhotoUrl,
+            'suit' => $suit,
         ]);
     }
+
 }

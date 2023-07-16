@@ -1,8 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuitController;
-use Creativeorange\Gravatar\Facades\Gravatar;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,24 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    if (Auth::check()) {
-        $email = Auth::user()->email;
-        $profilePhotoUrl = Gravatar::get($email);
-    } else {
-        $profilePhotoUrl = null;
-    }
-
-    return view('home', [
-        'title' => 'Ky-Jas | Jual & Sewa Jas Keren, Lengkap, Harga Bersahabat',
-        'profil' => $profilePhotoUrl
-    ]);
-});
+Route::get('/', [HomeController::class, 'index']);
 
 // suit
 Route::get('/suit/adult', [SuitController::class, 'index']); // jas dewasa
-Route::get('/suit/kids', [SuitController::class, 'kids']); //jas anak
-Route::get('/this/suit', [SuitController::class, 'detailSuit']); //detail suit
+Route::get('/suit/kids', [SuitController::class, 'kids']); //jas anak 
+Route::get('/this/suit/{name}/{code}', [SuitController::class, 'detailSuit']); //detail suit
 
 Route::middleware([
     'auth:sanctum',

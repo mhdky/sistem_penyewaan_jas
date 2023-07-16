@@ -18,7 +18,7 @@ class IsAdmin
         return $next($request);
 
         if(!auth()->check() || !auth()->user()->is_admin) {
-            abort(433);
+            abort(404);
         }
     }
 }
