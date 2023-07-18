@@ -1,4 +1,4 @@
-<div class="mainSearch bg-[#151525e5] backdrop-blur-lg fixed z-30 w-screen h-screen overflow-hidden hidden">
+<div class="mainSearch bg-[#151525e5] backdrop-blur-md fixed z-30 w-screen h-screen overflow-hidden hidden">
     <div class="w-full h-full px-4 pb-5 flex flex-col md-768:px-6 lg-1000:px-10 lg-1240:px-[60px] lg-1365:w-[1239px] lg-1365:mx-auto lg-1365:px-1">
         {{-- search input --}}
         <div class="w-full py-4">
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="container-card-product-search w-full h-full mt-5 pr-2 flex-[2] overflow-auto relative">
+        <div class="container-card-product-search w-full h-full mt-5 flex-[2] overflow-auto relative md-800:pr-5">
             <div class="searchResult w-full grid gap-10 grid-cols-2 sm-460:grid-cols-3 md-600:grid-cols-4 md-800:grid-cols-5 lg-1000:grid-cols-6"></div>            
         </div>
     </div>

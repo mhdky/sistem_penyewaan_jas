@@ -87,6 +87,13 @@ html {
     @apply w-2;
 }
 
+.container-table::-webkit-scrollbar-thumb {
+    @apply md-800:bg-neutral-200
+}
+.container-table::-webkit-scrollbar {
+    @apply w-2 h-2;
+}
+
 .imgActiveBorder {
     @apply border bg-zinc-400
 }

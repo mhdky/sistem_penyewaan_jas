@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Suit;
 use Creativeorange\Gravatar\Facades\Gravatar;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class SuitController extends Controller
