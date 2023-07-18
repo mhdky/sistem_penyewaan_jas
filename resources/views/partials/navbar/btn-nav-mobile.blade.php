@@ -163,5 +163,4 @@
             <a href="/register" class="bg-blue-primary px-4 py-2 rounded text-white text-sm font-bold hover:bg-blue-primary-hover">Register</a>
         </div>
     @endauth
-
 </div>

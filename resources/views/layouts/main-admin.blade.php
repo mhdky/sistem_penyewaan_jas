@@ -63,6 +63,7 @@
 
     <script src="{{ asset('js/admin/admin-navigation.js') }}"></script>
     @stack('btn-action-penyewaan')
+    @stack('about')
     <script src="https://kit.fontawesome.com/209072fbdb.js" crossorigin="anonymous"></script>
 </body>
 </html>

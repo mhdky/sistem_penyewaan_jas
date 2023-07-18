@@ -13,12 +13,12 @@ class ControllerDashboardPenyewaan extends Controller
         $email = Auth::user()->email;
         $profilePhotoUrl = Gravatar::get($email);
 
-        $adults = Suit::where('category_id', 1)->latest()->get();
+        // $adults = Suit::where('category_id', 1)->latest()->get();
         
         return view('dashboard.penyewaan.index', [
             'title' => 'Ky-Jas | Dashboard Penyewaan',
             'profil' => $profilePhotoUrl,
-            'adults' => $adults,
+            'adults' => Suit::latest()->get()
         ]);
     }
 }

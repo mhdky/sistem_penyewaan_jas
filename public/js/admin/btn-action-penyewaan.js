@@ -18,3 +18,28 @@ btnDetailPenyewaann.forEach((btnDetailPenyewaan, index) => {
         }, 100);
     });
 });
+
+const btnDeletePenyewaann = document.querySelectorAll('.btnDeletePenyewaan');
+const containerDeletePenyewaan = document.querySelectorAll('.containerDeletePenyewaan');
+const deletePenyewaan = document.querySelectorAll('.deletePenyewaan');
+const noDeltePenyewaann = document.querySelectorAll('.noDeltePenyewaan');
+btnDeletePenyewaann.forEach((btnDeletePenyewaan, index) => {
+    btnDeletePenyewaan.addEventListener('click', () => {
+        containerDeletePenyewaan[index].style.display = 'flex';
+        setTimeout(() => {
+            deletePenyewaan[index].style.opacity = '1';
+            deletePenyewaan[index].style.transform = 'translateY(0)';
+        }, 300);
+    });
+});
+
+noDeltePenyewaann.forEach((noDeltePenyewaan, index) => {
+    noDeltePenyewaan.addEventListener('click', () => {
+        deletePenyewaan[index].style.transform = 'translateY(28px)';
+        deletePenyewaan[index].style.opacity = '0';
+
+        setTimeout(() => {
+            containerDeletePenyewaan[index].style.display = 'none';
+        }, 300);
+    });
+});
