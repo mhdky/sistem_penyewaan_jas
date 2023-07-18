@@ -19,6 +19,8 @@ btnDetailPenyewaann.forEach((btnDetailPenyewaan, index) => {
     });
 });
 
+
+// delete penyewaan
 const btnDeletePenyewaann = document.querySelectorAll('.btnDeletePenyewaan');
 const containerDeletePenyewaan = document.querySelectorAll('.containerDeletePenyewaan');
 const deletePenyewaan = document.querySelectorAll('.deletePenyewaan');
@@ -40,6 +42,33 @@ noDeltePenyewaann.forEach((noDeltePenyewaan, index) => {
 
         setTimeout(() => {
             containerDeletePenyewaan[index].style.display = 'none';
+        }, 300);
+    });
+});
+
+
+// finish penyewaan
+const btnFinishPenyewaann = document.querySelectorAll('.btnFinishPenyewaan');
+const containerFinishPenyewaan = document.querySelectorAll('.containerFinishPenyewaan');
+const finishPenyewaan = document.querySelectorAll('.finishPenyewaan');
+const noFinishPenyewaann = document.querySelectorAll('.noFinishPenyewaan');
+
+btnFinishPenyewaann.forEach((btnFinishPenyewaan, i) => {
+    btnFinishPenyewaan.addEventListener('click', () => {
+        containerFinishPenyewaan[i].style.display = 'flex';
+        setTimeout(() => {
+            finishPenyewaan[i].style.transform = 'translateY(0)';
+            finishPenyewaan[i].style.opacity = '1';
+        }, 300);
+    });
+});
+
+noFinishPenyewaann.forEach((noFinishPenyewaan, i) => {
+    noFinishPenyewaan.addEventListener('click', () => {
+        finishPenyewaan[i].style.transform = 'translateY(28px)';
+        finishPenyewaan[i].style.opacity = '0';
+        setTimeout(() => {
+            containerFinishPenyewaan[i].style.display = 'none';
         }, 300);
     });
 });
