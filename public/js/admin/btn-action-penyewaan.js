@@ -75,18 +75,24 @@ noFinishPenyewaann.forEach((noFinishPenyewaan, i) => {
 });
 
 
-// cek ketersedian jas
-const btnCekKetersedianJas = document.querySelector('.btnCekKetersedianJas');
-const containerCekKetersedianJas = document.querySelector('.containerCekKetersedianJas');
-const closeCekKetersedianJas = document.querySelector('.closeCekKetersedianJas');
-const inputCekKetersedianJas = document.querySelector('.inputCekKetersedianJas');
+// cek 
+const btnCekKetersedianJass = document.querySelectorAll('.btnCekKetersedianJas');
+const containerCekKetersedianJas = document.querySelectorAll('.containerCekKetersedianJas');
+const closeCekKetersedianJass = document.querySelectorAll('.closeCekKetersedianJas');
+const inputCekKetersedianJas = document.querySelectorAll('.inputCekKetersedianJas');
 
-btnCekKetersedianJas.addEventListener('click', () => {
-    containerCekKetersedianJas.style.display = 'block';
-    setTimeout(() => {
-        inputCekKetersedianJas.focus();
-    }, 100);
+
+btnCekKetersedianJass.forEach((btnCekKetersedianJas, kj) => {
+    btnCekKetersedianJas.addEventListener('click', () => {
+        containerCekKetersedianJas[kj].style.display = 'block';
+        setTimeout(() => {
+            inputCekKetersedianJas[kj].focus();
+        }, 100);
+    });    
 });
-closeCekKetersedianJas.addEventListener('click', () => {
-    containerCekKetersedianJas.style.display = 'none';
+
+closeCekKetersedianJass.forEach((closeCekKetersedianJas, kj) => {
+    closeCekKetersedianJas.addEventListener('click', () => {
+        containerCekKetersedianJas[kj].style.display = 'none';
+    });
 });

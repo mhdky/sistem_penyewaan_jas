@@ -46,7 +46,41 @@
                 </div>
             </div>
 
-            <p class="text-blue-primary text-sm border-b border-blue-primary md-800:cursor-pointer">Cek jas yang disewa</p>
+            {{-- cek jas yang disewa --}}
+            <p class="btnCekKetersedianJas text-blue-primary text-sm border-b border-blue-primary md-800:cursor-pointer">Cek jas yang disewa</p>
+            {{-- pencarian ketersedian jas --}}
+            <div class="containerCekKetersedianJas bg-white w-full min-h-screen fixed z-20 top-0 right-0 bottom-0 left-0 overflow-auto hidden">
+                <div class="bg-gray-100 w-full h-[64px] px-4 flex justify-between items-center sticky top-0 z-[2] border-b border-gray-200">
+                    <div></div>
+                    {{-- form pencarian ketersedian jas --}}
+                    <div class="w-full md-671:w-[505px] h-[35px] mr-3 px-3 flex-[2] md-671:flex-none border border-zinc-400 rounded-[5px] flex justify-between items-center">
+                        <img src="{{ asset('img/search.svg') }}" alt="icon" class="w-[15px] h-[15px]">
+                        <input type="text"  id="searchKetersedianJas" placeholder="Masukan kode jas" class="inputCekKetersedianJas bg-transparent w-full h-full flex-[2] text-gray-700 text-[13px] border-none focus:ring-0">
+                        {{-- loading animation pencarian ketersedian jas --}}
+                        <img src="{{ asset('img/loading-2.gif') }}" alt="loading animation" class="hidden w-[20px] h-[20px]">
+                    </div>
+
+                    {{-- close pencarian ketersedian jas --}}
+                    <div class="closeCekKetersedianJas border border-slate-700 w-[35px] h-[35px] rounded-full flex justify-center items-center md-800:cursor-pointer">
+                        <img src="{{ asset('img/close.svg') }}" alt="icon" class="w-[23px] h-[23px]">
+                    </div>
+                </div>
+
+                {{-- hasil pencarian ketersedian jas --}}
+                <div class="w-full px-4 lg-1365:w-[1239px] lg-1365:mx-auto lg-1365:px-1">
+                    <div class="w-full mt-8 grid gap-10 grid-cols-2 sm-460:grid-cols-3 md-600:grid-cols-4 md-800:grid-cols-5 lg-1000:grid-cols-6 lg-1000:mt-[50px]">
+                        @foreach ($adults as $adult)
+                            <a href="/this/suit/{{ Str::lower($adult->name) . '/' . Str::lower($adult->code)}}" class="flex flex-col justify-between">
+                                {{-- img product --}}
+                                <img src="{{ asset($adult->main_picture) }}" alt="jas" class="w-full hfull">
+                                
+                                {{-- name product --}}
+                                <p class="h-16 font-bold mt-3 text-center">{{ Str::title($adult->name . ' - ') . Str::lower($adult->code) }}</p>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
