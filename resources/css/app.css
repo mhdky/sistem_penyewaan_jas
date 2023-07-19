@@ -138,3 +138,18 @@ html {
 .noData {
     @apply w-full h-full absolute flex justify-center text-neutral-200 items-center;
 }
+.noDataKetersedianJas {
+    @apply w-full h-screen fixed top-0 left-0 flex justify-center items-center text-blue-primary text-sm font-bold;
+}
+
+.styleNameNKetersedian {
+    @apply h-24 mt-3
+}
+
+.stylePKetersedian {
+    @apply text-green-500 text-[12px] font-bold text-center
+}
+
+.stylePKode {
+    @apply font-bold mt-3 text-center
+}

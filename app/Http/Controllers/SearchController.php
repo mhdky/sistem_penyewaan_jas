@@ -13,4 +13,11 @@ class SearchController extends Controller
     
             return response()->json($suits);
         }
+
+        // live search ketersedian jas
+        public function searchKetersedianJas($searchTextKetersedianJas) {
+            $suits = Suit::where('name', 'like', '%'.$searchTextKetersedianJas.'%')->get();
+    
+            return response()->json($suits);
+        }
 }

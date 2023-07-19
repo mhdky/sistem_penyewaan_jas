@@ -95,3 +95,70 @@ closeCekKetersedianJass.forEach((closeCekKetersedianJas, kj) => {
         containerCekKetersedianJas[kj].style.display = 'none';
     });
 });
+
+// live search ketersedian jas
+const searchInput = document.querySelector('.searchInput');
+const loading = document.querySelector('.loading');
+const searchResult = document.querySelector('.searchResult');
+
+searchInput.addEventListener('keyup', (e) => {
+    const searchTextKetersedianJas = e.target.value.trim();
+
+    if (searchTextKetersedianJas.length > 0) {
+        // Tampilkan loading
+        loading.style.display = 'flex';
+
+        fetch(`/sdjfqiaaweu8ui/${searchTextKetersedianJas}`)
+            .then(response => response.json())
+            .then(data => {
+                // Sembunyikan loading
+                loading.style.display = 'none';
+
+                searchResult.innerHTML = '';
+
+                if (data.length === 0) {
+                    // Jika data tidak ditemukan, tampilkan pesan
+                    const notFound = document.createElement('div');
+                    notFound.classList.add('noDataKetersedianJas');
+                    notFound.textContent = 'Tidak ada jas yang ditemukan';
+                    searchResult.appendChild(notFound);
+                } else {
+                    data.forEach(suit => {
+                        // jika data ditemukan
+                        const link = document.createElement('a');
+                        link.href = `/this/suit/${suit.name}/${suit.code}`;
+                        link.classList.add('linkMainSearch');
+
+                        const img = document.createElement('img');
+                        img.src = `/${suit.main_picture}`;
+                        img.alt = 'jas';
+                        img.classList.add('imgMainSearch');
+                        link.appendChild(img);
+
+                        const divNameNKetersedian = document.createElement('div');
+                        divNameNKetersedian.classList.add('styleNameNKetersedian');
+
+                        const pKetersedian = document.createElement('p');
+                        pKetersedian.classList.add('stylePKetersedian');
+                        pKetersedian.textContent = 'Tersedia';
+
+                        divNameNKetersedian.appendChild(pKetersedian);
+
+                        const pKode = document.createElement('p');
+                        pKode.classList.add('stylePKode');
+                        pKode.textContent = `${suit.name} - ${suit.code}`;
+
+                        divNameNKetersedian.appendChild(pKode)
+
+                        link.appendChild(divNameNKetersedian);
+
+                        searchResult.appendChild(link);
+                    });
+                }
+            })
+            .catch(error => console.log(error));
+    } else {
+        loading.style.display = 'none';
+        searchResult.innerHTML = '';
+    }
+});

@@ -20,8 +20,11 @@ use Illuminate\Support\Facades\Route;
 // home
 Route::get('/', [HomeController::class, 'index']);
 
-// data for live search
+// data for live search home dan lainnya
 Route::get('/sdjfqiaaweq112/{searchText}', [SearchController::class, 'search']);
+
+// data for live search cek ketersedian jas
+Route::get('/sdjfqiaaweu8ui/{searchTextKetersedianJas}', [SearchController::class, 'searchKetersedianJas'])->middleware('admin');
 
 // suit
 Route::get('/suit/adult', [SuitController::class, 'index']); // jas dewasa
