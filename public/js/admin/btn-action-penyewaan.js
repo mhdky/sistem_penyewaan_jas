@@ -1,3 +1,4 @@
+// keterangan fungsi button penyewaan
 const btnDetailPenyewaann = document.querySelectorAll('.btnDetailPenyewaan');
 const detailPenyewaann = document.querySelectorAll('.detailPenyewaan');
 
@@ -71,4 +72,21 @@ noFinishPenyewaann.forEach((noFinishPenyewaan, i) => {
             containerFinishPenyewaan[i].style.display = 'none';
         }, 300);
     });
+});
+
+
+// cek ketersedian jas
+const btnCekKetersedianJas = document.querySelector('.btnCekKetersedianJas');
+const containerCekKetersedianJas = document.querySelector('.containerCekKetersedianJas');
+const closeCekKetersedianJas = document.querySelector('.closeCekKetersedianJas');
+const inputCekKetersedianJas = document.querySelector('.inputCekKetersedianJas');
+
+btnCekKetersedianJas.addEventListener('click', () => {
+    containerCekKetersedianJas.style.display = 'block';
+    setTimeout(() => {
+        inputCekKetersedianJas.focus();
+    }, 100);
+});
+closeCekKetersedianJas.addEventListener('click', () => {
+    containerCekKetersedianJas.style.display = 'none';
 });
