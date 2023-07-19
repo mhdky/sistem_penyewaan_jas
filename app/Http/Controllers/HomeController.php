@@ -27,11 +27,4 @@ class HomeController extends Controller
             'kids' => $kids,
         ]);
     }
-
-    // live search
-    public function search($searchText) {
-        $suits = Suit::where('name', 'like', '%'.$searchText.'%')->orWhere('description', 'like', '%'.$searchText.'%')->orWhere('code', 'like', '%'.$searchText.'%')->get();
-
-        return response()->json($suits);
-    }
 }

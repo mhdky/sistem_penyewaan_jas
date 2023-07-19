@@ -6,7 +6,7 @@
         {{-- cek ketersedian & jas --}}
         <div class="w-full flex items-center gap-x-4">
             {{-- cek ketersedian jas --}}
-            <p class="btnCekKetersedianJas text-blue-primary text-sm border-b border-blue-primary md-800:cursor-pointer">Cek ketersedian jas</p>
+            <p class="btnCekKetersedianJas text-blue-primary text-[12px] font-medium border-b border-blue-primary md-800:cursor-pointer">Cek ketersedian jas</p>
             {{-- pencarian ketersedian jas --}}
             <div class="containerCekKetersedianJas bg-white w-full min-h-screen fixed z-20 top-0 right-0 bottom-0 left-0 overflow-auto hidden">
                 <div class="bg-gray-100 w-full h-[64px] px-4 flex justify-between items-center sticky top-0 z-[2] border-b border-gray-200">
@@ -47,7 +47,7 @@
             </div>
 
             {{-- cek jas yang disewa --}}
-            <p class="btnCekKetersedianJas text-blue-primary text-sm border-b border-blue-primary md-800:cursor-pointer">Cek jas yang disewa</p>
+            <p class="btnCekKetersedianJas text-blue-primary text-[12px] font-medium border-b border-blue-primary md-800:cursor-pointer">Cek jas yang disewa</p>
             {{-- pencarian ketersedian jas --}}
             <div class="containerCekKetersedianJas bg-white w-full min-h-screen fixed z-20 top-0 right-0 bottom-0 left-0 overflow-auto hidden">
                 <div class="bg-gray-100 w-full h-[64px] px-4 flex justify-between items-center sticky top-0 z-[2] border-b border-gray-200">
@@ -73,7 +73,7 @@
                             <a href="/this/suit/{{ Str::lower($adult->name) . '/' . Str::lower($adult->code)}}" class="flex flex-col justify-between">
                                 {{-- img product --}}
                                 <img src="{{ asset($adult->main_picture) }}" alt="jas" class="w-full hfull">
-                                
+
                                 {{-- name product --}}
                                 <p class="h-16 font-bold mt-3 text-center">{{ Str::title($adult->name . ' - ') . Str::lower($adult->code) }}</p>
                             </a>
@@ -95,18 +95,18 @@
             </div>
             {{-- table jas --}}
             @foreach ($adults as $adult)
-                <div class="{{ ($loop->index % 2 == 0) ? 'bg-zinc-100' : 'bg-zinc-50' }} min-w-max h-[113px] flex border-b-4 border-white sticky top-0 shadow-xl">
+                <div class="sewa-item {{ ($loop->index % 2 == 0) ? 'bg-zinc-100' : 'bg-zinc-50' }} min-w-max h-[113px] flex border-b-4 border-white sticky top-0 shadow-xl">
                     <div class="w-[309px] py-3 flex items-center gap-x-3 text-white text-[13px] font-bold">
                         <img src="{{ asset($adult->main_picture) }}" alt="jas" class="w-[65px] ml-5">
                         <p class="w-full flex-[2] text-zinc-500 text-[13px] text-center font-bold">{{ Str::title($adult->name) . ' - ' . Str::lower($adult->code) }}</p>
                     </div>
                     <div class="w-[243px] py-3 flex flex-col justify-center items-center gap-y-2">
-                        <p class="text-zinc-500 text-[13px] font-bold">17 September 2023  09.00 WIB</p>
+                        <p class="mulaiSewa text-zinc-500 text-[13px] font-bold">19 Juli 2023 12.39</p>
                         <p class="text-zinc-500 text-[13px] font-bold">Sampai</p>
-                        <p class="text-zinc-500 text-[13px] font-bold">17 November 2023  09.00 WIB</p>
+                        <p class="akhirSewa text-zinc-500 text-[13px] font-bold">22 Juli 2023 22.22</p>
                     </div>
-                    <h1 class="w-[294px] py-3 flex justify-center items-center text-zinc-500 text-[13px] font-bold">
-                        1 Hari 3 Jam 30 Menit 20 Detik
+                    <h1 class="countdown w-[294px] py-3 flex justify-center items-center text-zinc-500 text-[13px] font-bold">
+                        
                     </h1>
                     <div class="w-[258px] py-3 flex justify-center items-center gap-[5px]">
                         <div class="btnDetailPenyewaan bg-green-500 w-[25px] h-[25px] flex justify-center items-center rounded-[5px] md-800:cursor-pointer relative">
@@ -131,7 +131,7 @@
                 {{-- delete penyewaan --}}
                 <div class="containerDeletePenyewaan bg-[#1515250e] backdrop-blur-[2px] fixed z-20 top-0 right-0 bottom-0 left-0 hidden justify-center items-center">
                     <div class="deletePenyewaan bg-white w-[85%] rounded-md p-5 translate-y-7 opacity-0 duration-300 sm-460:w-[340px]">
-                        <p class="text-sm font-bold text-center">PERHATIAN!</p>
+                        <p class="text-sm font-bold text-center">PERINGATAN!</p>
                         <p class="text-sm font-bold text-zinc-700 text-center my-6">Kamu akan menghapus sewaan <br> {{ Str::title($adult->name) . ' - ' . Str::lower($adult->code) }}</p>
                         <div class="w-full flex justify-end items-center gap-x-3">
                             <p class="noDeltePenyewaan bg-violet-600 px-3 py-2 rounded-md text-white text-sm font-bold md-800:cursor-pointer">Tidak</p>
@@ -143,7 +143,7 @@
                 {{-- jas telah dikembalikan --}}
                 <div class="containerFinishPenyewaan bg-[#1515250e] backdrop-blur-[2px] fixed z-20 top-0 right-0 bottom-0 left-0 hidden justify-center items-center">
                     <div class="finishPenyewaan bg-white w-[85%] rounded-md p-5 translate-y-7 opacity-0 duration-300 sm-460:w-[340px]">
-                        <p class="text-sm text-center font-bold">PERHATIAN!</p>
+                        <p class="text-sm text-center font-bold">PERINGATAN!</p>
                         <p class="text-zinc-700 text-sm font-bold text-center my-6">Penyewaan jas {{ Str::title($adult->name) . ' - ' . Str::lower($adult->code) }} telah dikembalikan?</p>
                         <div class="w-full flex justify-end gap-x-3">
                             <p class="noFinishPenyewaan bg-violet-600 px-3 py-2 rounded-md text-white text-sm font-bold md-800:cursor-pointer">Belum</p>
@@ -158,4 +158,7 @@
 
 @push('btn-action-penyewaan')
     <script src="{{ asset('js/admin/btn-action-penyewaan.js') }}"></script>
+@endpush
+@push('countdown')
+    <script src="{{ asset('js/countdown.js') }}"></script>
 @endpush

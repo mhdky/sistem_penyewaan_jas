@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ControllerDashboardPenyewaan;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SuitController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 // data for live search
-Route::get('/sdjfqiaaweq112/{searchText}', [HomeController::class, 'search']);
+Route::get('/sdjfqiaaweq112/{searchText}', [SearchController::class, 'search']);
 
 // suit
 Route::get('/suit/adult', [SuitController::class, 'index']); // jas dewasa

@@ -75,12 +75,11 @@ noFinishPenyewaann.forEach((noFinishPenyewaan, i) => {
 });
 
 
-// cek 
+// cek ketersedian jas & cek jads yang disewa
 const btnCekKetersedianJass = document.querySelectorAll('.btnCekKetersedianJas');
 const containerCekKetersedianJas = document.querySelectorAll('.containerCekKetersedianJas');
 const closeCekKetersedianJass = document.querySelectorAll('.closeCekKetersedianJas');
 const inputCekKetersedianJas = document.querySelectorAll('.inputCekKetersedianJas');
-
 
 btnCekKetersedianJass.forEach((btnCekKetersedianJas, kj) => {
     btnCekKetersedianJas.addEventListener('click', () => {
