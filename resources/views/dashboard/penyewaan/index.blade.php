@@ -85,9 +85,9 @@
                         <p class="w-full flex-[2] text-zinc-500 text-[13px] text-center font-bold">{{ Str::title($rental->suit->name) . ' - ' . Str::lower($rental->suit->code) }}</p>
                     </div>
                     <div class="w-[243px] py-3 flex flex-col justify-center items-center gap-y-2">
-                        <p class="mulaiSewa text-zinc-500 text-[13px] font-bold">{{ $rental->rental_date }}</p>
+                        <p class="mulaiSewa text-zinc-500 text-[13px] font-bold">{{ Carbon\Carbon::parse($rental->rental_date)->translatedFormat('d F Y H.i'); }} WIB</p>
                         <p class="text-zinc-500 text-[13px] font-bold">Sampai</p>
-                        <p class="akhirSewa text-zinc-500 text-[13px] font-bold">{{ $rental->finish_rental_date }}</p>
+                        <p class="akhirSewa text-zinc-500 text-[13px] font-bold">{{ Carbon\Carbon::parse($rental->finish_rental_date)->translatedFormat('d F Y H.i'); }} WIB</p>
                         {{-- <input type="datetime-local" name="" id=""> --}}
                     </div>
                     <h1 class="countdown w-[294px] py-3 flex justify-center items-center text-zinc-500 text-[13px] font-bold">

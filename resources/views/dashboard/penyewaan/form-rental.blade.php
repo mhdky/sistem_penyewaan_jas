@@ -94,7 +94,7 @@
                 <div class="w-full mt-10 flex flex-col">
                     <label for="email" class="text-zinc-500 text-sm font-bold">Email Penyewa</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
-                        <input type="email" name="email" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        <input type="text" name="email" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
                         {{-- hasil pencarian email --}}
                         <div class="containerPencarianEmail w-full absolute left-0 top-7 hidden">
                             <div class="searchResult bg-zinc-100 w-full max-h-32 overflow-auto border border-gray-300"></div>
