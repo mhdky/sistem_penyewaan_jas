@@ -26,6 +26,9 @@ Route::get('/sdjfqiaaweq112/{searchText}', [SearchController::class, 'search']);
 // data for live search cek ketersedian jas
 Route::get('/sdjfqiaaweu8ui/{searchTextKetersedianJas}', [SearchController::class, 'searchKetersedianJas'])->middleware('admin');
 
+// data for live search get email user
+Route::get('/sdjfqisdfhef/{getEmail}', [SearchController::class, 'searchGetEmails'])->middleware('admin');
+
 // suit
 Route::get('/suit/adult', [SuitController::class, 'index']); // jas dewasa
 Route::get('/suit/kids', [SuitController::class, 'kids']); //jas anak 

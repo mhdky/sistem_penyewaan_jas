@@ -92,15 +92,20 @@
                 {{-- email penyewa --}}
                 <div class="w-full mt-10 flex flex-col">
                     <label for="email" class="text-zinc-500 text-sm font-bold">Email Penyewa</label>
-                    <div class="w-full mt-2 pb-1 border-b border-gray-300">
-                        <input type="email" name="email" id="email" placeholder="example@mail.com" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                    <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
+                        <input type="email" name="text" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        {{-- hasil pencarian email --}}
+                        <div class="containerPencarianEmail w-full absolute left-0 top-7 hidden">
+                            <div class="searchResult bg-zinc-100 w-full max-h-32 overflow-auto border border-gray-300"></div>
+                            <p class="closeContainerPencarianEmail w-full bg-red-50 py-2 text-red-700 text-[12px] font-semibold text-center border-x border-b border-gray-300 md-800:cursor-pointer">Tutup</p>
+                        </div>
                     </div>
                     {{-- <p class="text-red-500 text-[12px] font-bold mt-0.5">error</p> --}}
                 </div>
 
                 {{-- tanggal penyewaan --}}
                 <div class="w-full mt-10 flex flex-col">
-                    <label for="rental_date" class="text-zinc-500 text-sm font-bold">Mulai Penyewa</label>
+                    <label for="rental_date" class="text-zinc-500 text-sm font-bold">Mulai Penyewaan</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300">
                         <input type="datetime-local" name="rental_date" id="rental_date" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
                     </div>
@@ -109,7 +114,7 @@
 
                 {{-- tanggal penyewaan --}}
                 <div class="w-full mt-10 flex flex-col">
-                    <label for="finish_rental_date" class="text-zinc-500 text-sm font-bold">Akhir Penyewa</label>
+                    <label for="finish_rental_date" class="text-zinc-500 text-sm font-bold">Akhir Penyewaan</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300">
                         <input type="datetime-local" name="finish_rental_date" id="finish_rental_date" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
                     </div>
