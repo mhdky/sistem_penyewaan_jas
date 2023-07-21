@@ -79,7 +79,8 @@
             </div>
 
             {{-- form penyewaan --}}
-            <form method="POST" action="/" autocomplete="off" class="w-full mt-12 md-768:w-full md-768:flex-[2] md-768:order-1 md-768:mt-0">
+            <form method="POST" action="/dashboard/penyewaan/{{ $suit->id }}" autocomplete="off" class="w-full mt-12 md-768:w-full md-768:flex-[2] md-768:order-1 md-768:mt-0">
+                @csrf
                 {{-- nama penyewa --}}
                 <div class="w-full flex flex-col">
                     <label for="name" class="text-zinc-500 text-sm font-bold">Nama Penyewa</label>
@@ -93,7 +94,7 @@
                 <div class="w-full mt-10 flex flex-col">
                     <label for="email" class="text-zinc-500 text-sm font-bold">Email Penyewa</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
-                        <input type="email" name="text" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        <input type="email" name="email" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
                         {{-- hasil pencarian email --}}
                         <div class="containerPencarianEmail w-full absolute left-0 top-7 hidden">
                             <div class="searchResult bg-zinc-100 w-full max-h-32 overflow-auto border border-gray-300"></div>

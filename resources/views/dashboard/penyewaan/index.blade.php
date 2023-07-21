@@ -53,13 +53,13 @@
                 {{-- hasil pencarian ketersedian jas --}}
                 <div class="w-full px-4 lg-1365:w-[1239px] lg-1365:mx-auto lg-1365:px-1">
                     <div class="w-full mt-8 grid gap-10 grid-cols-2 sm-460:grid-cols-3 md-600:grid-cols-4 md-800:grid-cols-5 lg-1000:grid-cols-6 lg-1000:mt-[50px]">
-                        @foreach ($adults as $adult)
-                            <a href="/this/suit/{{ Str::lower($adult->name) . '/' . Str::lower($adult->code)}}" class="flex flex-col justify-between">
+                        @foreach ($suits as $suit)
+                            <a href="/this/suit/{{ Str::lower($suit->name) . '/' . Str::lower($suit->code)}}" class="flex flex-col justify-between">
                                 {{-- img product --}}
-                                <img src="{{ asset($adult->main_picture) }}" alt="jas" class="w-full hfull">
+                                <img src="{{ asset($suit->main_picture) }}" alt="jas" class="w-full hfull">
 
                                 {{-- name product --}}
-                                <p class="h-16 font-bold mt-3 text-center">{{ Str::title($adult->name . ' - ') . Str::lower($adult->code) }}</p>
+                                <p class="h-16 font-bold mt-3 text-center">{{ Str::title($suit->name . ' - ') . Str::lower($suit->code) }}</p>
                             </a>
                         @endforeach
                     </div>
@@ -78,16 +78,16 @@
                 <h1 class="w-[258px] py-3 flex justify-center text-white text-[13px] font-bold">Aksi</h1>
             </div>
             {{-- table jas --}}
-            @foreach ($adults as $adult)
+            @foreach ($rentals as $rental)
                 <div class="sewa-item {{ ($loop->index % 2 == 0) ? 'bg-zinc-100' : 'bg-zinc-50' }} min-w-max h-[113px] flex border-b-4 border-white sticky top-0 shadow-xl">
                     <div class="w-[309px] py-3 flex items-center gap-x-3 text-white text-[13px] font-bold">
-                        <img src="{{ asset($adult->main_picture) }}" alt="jas" class="w-[65px] ml-5">
-                        <p class="w-full flex-[2] text-zinc-500 text-[13px] text-center font-bold">{{ Str::title($adult->name) . ' - ' . Str::lower($adult->code) }}</p>
+                        <img src="{{ asset($rental->suit->main_picture) }}" alt="jas" class="w-[65px] ml-5">
+                        <p class="w-full flex-[2] text-zinc-500 text-[13px] text-center font-bold">{{ Str::title($rental->suit->name) . ' - ' . Str::lower($rental->suit->code) }}</p>
                     </div>
                     <div class="w-[243px] py-3 flex flex-col justify-center items-center gap-y-2">
-                        <p class="mulaiSewa text-zinc-500 text-[13px] font-bold">19 Juli 2023 12.39</p>
+                        <p class="mulaiSewa text-zinc-500 text-[13px] font-bold">{{ $rental->rental_date }}</p>
                         <p class="text-zinc-500 text-[13px] font-bold">Sampai</p>
-                        <p class="akhirSewa text-zinc-500 text-[13px] font-bold">22 Juli 2023 22.00</p>
+                        <p class="akhirSewa text-zinc-500 text-[13px] font-bold">{{ $rental->finish_rental_date }}</p>
                         {{-- <input type="datetime-local" name="" id=""> --}}
                     </div>
                     <h1 class="countdown w-[294px] py-3 flex justify-center items-center text-zinc-500 text-[13px] font-bold">
@@ -117,7 +117,7 @@
                 <div class="containerDeletePenyewaan bg-[#1515250e] backdrop-blur-[2px] fixed z-20 top-0 right-0 bottom-0 left-0 hidden justify-center items-center">
                     <div class="deletePenyewaan bg-white w-[85%] rounded-md p-5 translate-y-7 opacity-0 duration-300 sm-460:w-[340px]">
                         <p class="text-sm font-bold text-center">PERINGATAN!</p>
-                        <p class="text-sm font-bold text-zinc-700 text-center my-6">Kamu akan menghapus sewaan <br> {{ Str::title($adult->name) . ' - ' . Str::lower($adult->code) }}</p>
+                        <p class="text-sm font-bold text-zinc-700 text-center my-6">Kamu akan menghapus sewaan <br> {{ Str::title($rental->suit->name) . ' - ' . Str::lower($rental->suit->code) }}</p>
                         <div class="w-full flex justify-end items-center gap-x-3">
                             <p class="noDeltePenyewaan bg-violet-600 px-3 py-2 rounded-md text-white text-sm font-bold md-800:cursor-pointer">Tidak</p>
                             <button type="submit" class="text-blue-primary text-sm font-bold">Hapus</button>
@@ -129,7 +129,7 @@
                 <div class="containerFinishPenyewaan bg-[#1515250e] backdrop-blur-[2px] fixed z-20 top-0 right-0 bottom-0 left-0 hidden justify-center items-center">
                     <div class="finishPenyewaan bg-white w-[85%] rounded-md p-5 translate-y-7 opacity-0 duration-300 sm-460:w-[340px]">
                         <p class="text-sm text-center font-bold">PERINGATAN!</p>
-                        <p class="text-zinc-700 text-sm font-bold text-center my-6">Penyewaan jas {{ Str::title($adult->name) . ' - ' . Str::lower($adult->code) }} telah dikembalikan?</p>
+                        <p class="text-zinc-700 text-sm font-bold text-center my-6">Penyewaan jas {{ Str::title($rental->suit->name) . ' - ' . Str::lower($rental->suit->code) }} telah dikembalikan?</p>
                         <div class="w-full flex justify-end gap-x-3">
                             <p class="noFinishPenyewaan bg-violet-600 px-3 py-2 rounded-md text-white text-sm font-bold md-800:cursor-pointer">Belum</p>
                             <button type="submit" class="text-blue-primary text-sm font-bold">Sudah</button>

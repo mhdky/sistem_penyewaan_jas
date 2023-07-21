@@ -31,6 +31,41 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password')
         ]);
 
+        User::create([
+            'is_admin' => 0,
+            'name' => 'Effenril Agung Marpaung',
+            'email' => 'effenrilagung300@gmail.com',
+            'password' => Hash::make('password')
+        ]);
+
+        User::create([
+            'is_admin' => 0,
+            'name' => 'Niki Pranata Febri Anandi',
+            'email' => 'nikipranatafa@gmail.com',
+            'password' => Hash::make('password')
+        ]);
+
+        User::create([
+            'is_admin' => 0,
+            'name' => 'Muhammad Ridwan',
+            'email' => 'ridwan@gmail.com',
+            'password' => Hash::make('password')
+        ]);
+
+        User::create([
+            'is_admin' => 0,
+            'name' => 'Surya Darma',
+            'email' => 'suryadarma@gmail.com',
+            'password' => Hash::make('password')
+        ]);
+
+        User::create([
+            'is_admin' => 0,
+            'name' => 'Andika Sahputra Golo',
+            'email' => 'andikagulo@gmail.com',
+            'password' => Hash::make('password')
+        ]);
+
         Suit::create([
             'category_id' => 1,
             'color_id' => 1,

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rental;
 use App\Models\Suit;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Termwind\Components\Dd;
 
 class ControllerDashboardPenyewaan extends Controller
 {
@@ -19,7 +21,8 @@ class ControllerDashboardPenyewaan extends Controller
         return view('dashboard.penyewaan.index', [
             'title' => 'Ky-Jas | Dashboard Penyewaan',
             'profil' => $profilePhotoUrl,
-            'adults' => Suit::latest()->get()
+            'suits' => Suit::latest()->get(),
+            'rentals' => Rental::latest()->get(),
         ]);
     }
 
@@ -32,5 +35,19 @@ class ControllerDashboardPenyewaan extends Controller
             'profil' => $profilePhotoUrl,
             'suit' => $suit
         ]);
+    }
+
+    // masukan data sewaan ke tabel rental
+    public function rentalSuit(Request $request, Suit $suit) {
+        $rental = new Rental;
+        $rental->suit_id = $suit->id;
+        $rental->name = $request->name;
+        $rental->email = $request->email;
+        $rental->rental_date = $request->rental_date;
+        $rental->finish_rental_date = $request->finish_rental_date;
+
+        $rental->save();
+
+        return redirect('/dashboard/penyewaan');
     }
 }
