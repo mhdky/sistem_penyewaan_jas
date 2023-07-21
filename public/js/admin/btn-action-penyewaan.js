@@ -126,7 +126,7 @@ searchInput.addEventListener('keyup', (e) => {
                     data.forEach(suit => {
                         // jika data ditemukan
                         const link = document.createElement('a');
-                        link.href = `/this/suit/${suit.name}/${suit.code}`;
+                        link.href = `/dashboard/penyewaan/${suit.code}`;
                         link.classList.add('linkMainSearch');
 
                         const img = document.createElement('img');

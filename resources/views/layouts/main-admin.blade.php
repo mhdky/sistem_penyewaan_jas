@@ -36,7 +36,7 @@
                         <div class="flex justify-center mt-10">
                             <ul class="w-max">
                                 <li class="mb-3 duration-300 -ml-20 hover:translate-x-1 lg-1000:-ml-0"><a href="/" class="text-zinc-200 text-[13px] font-bold">Beranda</a></li>
-                                <li class="mb-3 duration-300 -ml-20 hover:translate-x-1 lg-1000:-ml-0"><a href="#" class="{{ Request::is('dashboard/penyewaan') ? 'text-violet-950' : 'text-zinc-200' }} text-[13px] font-bold">Penyewaan</a></li>
+                                <li class="mb-3 duration-300 -ml-20 hover:translate-x-1 lg-1000:-ml-0"><a href="#" class="{{ Request::is('dashboard/penyewaan*') ? 'text-violet-950' : 'text-zinc-200' }} text-[13px] font-bold">Penyewaan</a></li>
                                 <li class="mb-3 duration-300 -ml-20 hover:translate-x-1 lg-1000:-ml-0"><a href="#" class="text-zinc-200 text-[13px] font-bold">Jas</a></li>
                                 <li class="mb-3 duration-300 -ml-20 hover:translate-x-1 lg-1000:-ml-0"><a href="#" class="text-zinc-200 text-[13px] font-bold">Informasi Toko</a></li>
                             </ul>
@@ -65,6 +65,7 @@
     @stack('btn-action-penyewaan')
     @stack('about')
     @stack('countdown')
+    @stack('form-rental')
     <script src="https://kit.fontawesome.com/209072fbdb.js" crossorigin="anonymous"></script>
 </body>
 </html>

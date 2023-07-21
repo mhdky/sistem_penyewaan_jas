@@ -88,6 +88,7 @@
                         <p class="mulaiSewa text-zinc-500 text-[13px] font-bold">19 Juli 2023 12.39</p>
                         <p class="text-zinc-500 text-[13px] font-bold">Sampai</p>
                         <p class="akhirSewa text-zinc-500 text-[13px] font-bold">22 Juli 2023 22.00</p>
+                        {{-- <input type="datetime-local" name="" id=""> --}}
                     </div>
                     <h1 class="countdown w-[294px] py-3 flex justify-center items-center text-zinc-500 text-[13px] font-bold">
                         

@@ -32,7 +32,8 @@ Route::get('/suit/kids', [SuitController::class, 'kids']); //jas anak
 Route::get('/this/suit/{name}/{code}', [SuitController::class, 'detailSuit']); //detail suit
 
 // dashboard penyewaan
-Route::get('/dashboard/penyewaan', [ControllerDashboardPenyewaan::class, 'index'])->middleware('admin');
+Route::get('/dashboard/penyewaan', [ControllerDashboardPenyewaan::class, 'index'])->middleware('admin'); //tampilkan jas yang disewa
+Route::get('/dashboard/penyewaan/{suit:code}', [ControllerDashboardPenyewaan::class, 'formRental'])->middleware('admin'); //form dashboar penyewaan
 
 Route::middleware([
     'auth:sanctum',

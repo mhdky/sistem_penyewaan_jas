@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ControllerDashboardPenyewaan extends Controller
 {
+    // tampilkan jas yang disewa
     public function index() {
         $email = Auth::user()->email;
         $profilePhotoUrl = Gravatar::get($email);
@@ -19,6 +20,17 @@ class ControllerDashboardPenyewaan extends Controller
             'title' => 'Ky-Jas | Dashboard Penyewaan',
             'profil' => $profilePhotoUrl,
             'adults' => Suit::latest()->get()
+        ]);
+    }
+
+    public function formRental(Suit $suit) {
+        $email = Auth::user()->email;
+        $profilePhotoUrl = Gravatar::get($email);
+
+        return view('dashboard.penyewaan.form-rental', [
+            'title' => 'Sewa jas ' . $suit->name . ' | Ky Jas',
+            'profil' => $profilePhotoUrl,
+            'suit' => $suit
         ]);
     }
 }
