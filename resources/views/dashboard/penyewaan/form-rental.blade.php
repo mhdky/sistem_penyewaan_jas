@@ -85,41 +85,49 @@
                 <div class="w-full flex flex-col">
                     <label for="name" class="text-zinc-500 text-sm font-bold">Nama Penyewa</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300">
-                        <input type="text" name="name" id="name" placeholder="Nama" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        <input type="text" name="name" id="name" placeholder="Nama" required minlength="1" maxlength="50" value="{{ old('name') }}" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
                     </div>
-                    {{-- <p class="text-red-500 text-[12px] font-bold mt-0.5">error</p> --}}
+                    @error('name')
+                        <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 {{-- email penyewa --}}
                 <div class="w-full mt-10 flex flex-col">
                     <label for="email" class="text-zinc-500 text-sm font-bold">Email Penyewa</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
-                        <input type="text" name="email" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        <input type="email" name="email" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" required value="{{ old('email') }}" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
                         {{-- hasil pencarian email --}}
                         <div class="containerPencarianEmail w-full absolute left-0 top-7 hidden">
                             <div class="searchResult bg-zinc-100 w-full max-h-32 overflow-auto border border-gray-300"></div>
                             <p class="closeContainerPencarianEmail w-full bg-red-50 py-2 text-red-700 text-[12px] font-semibold text-center border-x border-b border-gray-300 md-800:cursor-pointer">Tutup</p>
                         </div>
                     </div>
-                    {{-- <p class="text-red-500 text-[12px] font-bold mt-0.5">error</p> --}}
+                    @error('email')
+                        <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 {{-- tanggal penyewaan --}}
                 <div class="w-full mt-10 flex flex-col">
                     <label for="rental_date" class="text-zinc-500 text-sm font-bold">Mulai Penyewaan</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300">
-                        <input type="datetime-local" name="rental_date" id="rental_date" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        <input type="datetime-local" name="rental_date" id="rental_date" required value="{{ old('rental_date') }}" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
                     </div>
-                    {{-- <p class="text-red-500 text-[12px] font-bold mt-0.5">error</p> --}}
+                    @error('rental_date')
+                        <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
+                    @enderror
                 </div>
 
-                {{-- tanggal penyewaan --}}
+                {{-- tanggal akhir penyewaan --}}
                 <div class="w-full mt-10 flex flex-col">
                     <label for="finish_rental_date" class="text-zinc-500 text-sm font-bold">Akhir Penyewaan</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300">
-                        <input type="datetime-local" name="finish_rental_date" id="finish_rental_date" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        <input type="datetime-local" name="finish_rental_date" id="finish_rental_date" required value="{{ old('finish_rental_date') }}" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
                     </div>
-                    {{-- <p class="text-red-500 text-[12px] font-bold mt-0.5">error</p> --}}
+                    @error('finish_rental_date')
+                        <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <button type="submit" class="bg-blue-primary w-full h-[37px] mt-10 text-white text-sm font-semibold rounded-[5px]">Sewa</button>
