@@ -13,7 +13,7 @@
     <div class="w-full h-full overflow-auto mt-3 md-768:mt-10">
         <div class="w-full flex flex-col md-768:flex-row md-768:gap-x-14">
             {{-- kontainer gambar jas, ukuran jas, dan deskripsi --}}
-            <div class="w-full flex overflow-hidden md-768:w-[300px] md-768:order-2 md-900:w-[427px] md-900:border-l md-900:border-gray-300 md-900:pl-7">
+            <div class="w-full flex overflow-hidden md-768:w-[300px] md-768:order-2 md-900:w-[427px] md-900:border-l md-900:border-gray-300 md-900:pl-7 md-900:pr-3">
                 {{-- gambar jas & ukuran jas --}}
                 <div class="gambarJas w-full transition-all duration-300">
                     {{-- gambar jas --}}
@@ -22,7 +22,7 @@
                         <div class="bg-zinc-200 w-full p-7 rounded-sm md-768:w-[170px] md-900:w-[150px]"><img src="/{{ $suit->main_picture }}" alt="jas" class="w-full"></div>
                     
                         {{-- gambar lain --}}
-                        <div class="w-full mt-5 grid grid-cols-3 gap-4 md-900:w-[233px] md-900:h-max md-900:mt-0">
+                        <div class="w-full mt-5 grid grid-cols-3 gap-4 md-900:w-[220px] md-900:h-max md-900:mt-0">
                             @if ($suit->picture_1 !== null)
                                 <div class="bg-zinc-100 p-4 flex justify-between items-center rounded-sm"><img src="/{{ $suit->picture_1 }}" alt="jas" class="w-full"></div>
                             @endif
@@ -80,6 +80,11 @@
 
             {{-- form penyewaan --}}
             <form method="POST" action="/dashboard/penyewaan/{{ $suit->id }}" autocomplete="off" class="w-full mt-12 md-768:w-full md-768:flex-[2] md-768:order-1 md-768:mt-0">
+                {{-- jika sewaan belum berakhir --}}
+                @if (session()->has('sewaBelumSelesai'))
+                    <p class="bg-red-400 w-full py-2 border border-red-500 mb-3 text-white text-sm text-center font-bold">{{ session('sewaBelumSelesai') }}</p>
+                @endif
+                
                 @csrf
                 {{-- nama penyewa --}}
                 <div class="w-full flex flex-col">

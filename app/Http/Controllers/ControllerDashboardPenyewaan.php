@@ -46,13 +46,19 @@ class ControllerDashboardPenyewaan extends Controller
             'finish_rental_date' => 'required|date',
         ]);
 
+        // cek jika penyewaan pada jas belum berakhir maka jas tidak dapat di sewa
+        $suitRental = Rental::where('suit_id', $suit->id)->first();
+        if($suitRental) {
+            return back()->with('sewaBelumSelesai', 'Masa penyewaan belum berakhir');
+        }
+
+        // jika sewaan jas telah berakhir maka input data penyewaan ke database
         $rental = new Rental;
         $rental->suit_id = $suit->id;
         $rental->name = $validateData['name'];
         $rental->email = $validateData['email'];
         $rental->rental_date = $validateData['rental_date'];
-        $rental->finish_rental_date = $validateData['finish_rental_date'];
-
+        $rental->finish_rental_date = $validateData['finish_rental_date'];        
         $rental->save();
 
         return redirect('/dashboard/penyewaan');
