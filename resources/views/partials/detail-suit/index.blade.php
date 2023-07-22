@@ -77,7 +77,11 @@
                     <div class="flex items-center mb-5">
                         {{-- keterangan --}}
                         <p class="w-[117px] font-bold">Status</p>
-                        <p>Masih dalam penyewaan</p>
+                        @if ($suit->availability == true)
+                            <p class="text-green-500">Tersedia</p>
+                        @else
+                            <p class="text-red-500">Masih dalam penyewaan</p>
+                        @endif
                     </div>
 
                     {{-- deskripsi --}}

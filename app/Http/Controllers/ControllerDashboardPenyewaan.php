@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rental;
 use App\Models\Suit;
+use App\Models\User;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,15 +53,27 @@ class ControllerDashboardPenyewaan extends Controller
             return back()->with('sewaBelumSelesai', 'Masa penyewaan belum berakhir');
         }
 
-        // jika sewaan jas telah berakhir maka input data penyewaan ke database
-        $rental = new Rental;
-        $rental->suit_id = $suit->id;
-        $rental->name = $validateData['name'];
-        $rental->email = $validateData['email'];
-        $rental->rental_date = $validateData['rental_date'];
-        $rental->finish_rental_date = $validateData['finish_rental_date'];        
-        $rental->save();
+        // Lakukan pengecekan apakah email yang dimasukkan sudah ada di tabel users
+        $email = $validateData['email'];
+        
+        if(User::where('email', $email)->exists()) {
+            // Email ditemukan maka input data penyewaan ke database
+            $suitAvailability = Suit::where('id', $suit->id)->first();
+            $suitAvailability->availability = false;
+            $suitAvailability->update();
 
-        return redirect('/dashboard/penyewaan');
+            $rental = new Rental;
+            $rental->suit_id = $suit->id;
+            $rental->name = $validateData['name'];
+            $rental->email = $email;
+            $rental->rental_date = $validateData['rental_date'];
+            $rental->finish_rental_date = $validateData['finish_rental_date'];        
+            $rental->save();
+
+            return redirect('/dashboard/penyewaan');
+        }else {
+            // Email tidak ditemukan, kembali ke halaman sebelumnya
+            return back()->with('errorEmail', 'Email tidak terdaftar');
+        }
     }
 }

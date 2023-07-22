@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->foreignId('color_id');
+            $table->boolean('availability')->default(true);
             $table->string('main_picture');
             $table->string('picture_1')->nullable();
             $table->string('picture_2')->nullable();

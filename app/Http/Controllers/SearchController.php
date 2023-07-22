@@ -16,7 +16,7 @@ class SearchController extends Controller {
 
         // live search ketersedian jas
         public function searchKetersedianJas($searchTextKetersedianJas) {
-            $suits = Suit::where('name', 'like', '%'.$searchTextKetersedianJas.'%')->get();
+            $suits = Suit::where('name', 'like', '%'.$searchTextKetersedianJas.'%')->where('availability', 'like', true)->get();
     
             return response()->json($suits);
         }

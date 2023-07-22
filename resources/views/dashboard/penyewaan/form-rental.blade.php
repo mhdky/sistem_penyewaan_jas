@@ -59,7 +59,11 @@
                             </div>
                             <div class="flex items-center mt-5">
                                 <p class="w-36 text-[13px] font-bold">Status</p>
-                                <p class="text-zinc-500 text-[13px] font-bold">{{ 'Tersedia' }}</p>
+                                @if ($suit->availability == true)
+                                    <p class="text-zinc-500 text-[13px] font-bold">{{ 'Tersedia' }}</p>
+                                @else
+                                    <p class="text-red-500 text-[13px] font-bold">{{ 'Masih dalam penyewaan' }}</p>
+                                @endif
                             </div>
                             <div class="btnDeskripsi flex items-center mt-5 group md-800:cursor-pointer">
                                 <p class="w-36 text-[13px] font-bold">Deskripsi</p>
@@ -84,7 +88,7 @@
                 @if (session()->has('sewaBelumSelesai'))
                     <p class="bg-red-400 w-full py-2 border border-red-500 mb-3 text-white text-sm text-center font-bold">{{ session('sewaBelumSelesai') }}</p>
                 @endif
-                
+
                 @csrf
                 {{-- nama penyewa --}}
                 <div class="w-full flex flex-col">
@@ -110,7 +114,10 @@
                     </div>
                     @error('email')
                         <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
-                    @enderror
+                        @enderror
+                    @if (session()->has('errorEmail'))
+                        <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ session('errorEmail') }}</p>
+                    @endif
                 </div>
 
                 {{-- tanggal penyewaan --}}

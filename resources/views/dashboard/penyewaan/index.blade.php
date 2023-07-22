@@ -6,7 +6,7 @@
         {{-- cek ketersedian & jas --}}
         <div class="w-full flex items-center gap-x-4">
             {{-- cek ketersedian jas --}}
-            <p class="btnCekKetersedianJas text-blue-primary text-[12px] font-medium border-b border-blue-primary md-800:cursor-pointer">Cek ketersedian jas</p>
+            <p class="btnCekKetersedianJas text-blue-primary text-[12px] font-medium border-b border-blue-primary md-800:cursor-pointer">Sewa jas</p>
             {{-- pencarian ketersedian jas --}}
             <div class="containerCekKetersedianJas bg-white w-full min-h-screen fixed z-20 top-0 right-0 bottom-0 left-0 overflow-auto hidden">
                 <div class="bg-gray-100 w-full h-[64px] px-4 flex justify-between items-center sticky top-0 z-[2] border-b border-gray-200">
