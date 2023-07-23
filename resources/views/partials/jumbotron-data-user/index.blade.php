@@ -14,7 +14,7 @@
             <h2 class="bg-violet-500 w-max mt-1 py-0.5 px-2 block rounded-xl text-white text-[12px] md-768:py-1 md-768:px-3">{{ Str::limit(Auth::user()->email, 35) }}</h2>
             {{-- user penyewaan --}}
             <p class="mt-3 text-white text-[12px] flex items-center md-768:text-[13px]">
-                Sedang disewa <span class="font-bold block ml-1"> {{ $userRentals->count() }}</span> <span class="bg-violet-300 w-[1px] h-3 mx-2 block"></span> Selesai disewa <span class="font-bold block ml-1"> 0</span>
+                Sedang disewa <span class="font-bold block ml-1"> {{ $userRentals->count() }}</span> <span class="bg-violet-300 w-[1px] h-3 mx-2 block"></span> Selesai disewa <span class="font-bold block ml-1"> {{ $userFinishRentals->count() }}</span>
             </p>
         </div>
     </div>

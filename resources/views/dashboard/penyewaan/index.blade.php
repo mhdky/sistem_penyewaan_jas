@@ -132,7 +132,11 @@
                         <p class="text-zinc-700 text-sm font-bold text-center my-6">Penyewaan jas {{ Str::title($rental->suit->name) . ' - ' . Str::lower($rental->suit->code) }} telah dikembalikan?</p>
                         <div class="w-full flex justify-end gap-x-3">
                             <p class="noFinishPenyewaan bg-violet-600 px-3 py-2 rounded-md text-white text-sm font-bold md-800:cursor-pointer">Belum</p>
-                            <button type="submit" class="text-blue-primary text-sm font-bold">Sudah</button>
+                            <form action="/dashboard/penyewaan/{{ $rental->id }}" method="post">
+                                @method('put')
+                                @csrf
+                                <button type="submit" class="text-blue-primary text-sm font-bold mt-2">Sudah</button>
+                            </form>
                         </div>
                     </div>
                 </div>

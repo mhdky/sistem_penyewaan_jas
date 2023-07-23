@@ -68,12 +68,17 @@ class SuitController extends Controller
         $email = Auth::user()->email;
         $profilePhotoUrl = Gravatar::get($email);
 
-        $userRentals = Rental::where('email', Auth::user()->email)->get();
+        // sedang disewa
+        $userRentals = Rental::where('email', Auth::user()->email)->where('finish_rental', false)->get();
+
+        // selesai disewa
+        $userFinishRentals = Rental::where('email', Auth::user()->email)->where('finish_rental', true);
 
         return view('suit.rent-suit', [
             'title' => 'Jas yang disewa | Ky-Jas',
             'profil' => $profilePhotoUrl,
-            'userRentals' => $userRentals
+            'userRentals' => $userRentals,
+            'userFinishRentals' => $userFinishRentals->latest()->get(),
         ]);
     }
 

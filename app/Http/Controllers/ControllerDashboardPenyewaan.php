@@ -18,12 +18,14 @@ class ControllerDashboardPenyewaan extends Controller
         $profilePhotoUrl = Gravatar::get($email);
 
         // $adults = Suit::where('category_id', 1)->latest()->get();
+
+        $rentals = Rental::where('finish_rental', false)->latest()->get();
         
         return view('dashboard.penyewaan.index', [
             'title' => 'Ky-Jas | Dashboard Penyewaan',
             'profil' => $profilePhotoUrl,
             'suits' => Suit::latest()->get(),
-            'rentals' => Rental::latest()->get(),
+            'rentals' => $rentals,
         ]);
     }
 
@@ -48,7 +50,7 @@ class ControllerDashboardPenyewaan extends Controller
         ]);
 
         // cek jika penyewaan pada jas belum berakhir maka jas tidak dapat di sewa
-        $suitRental = Rental::where('suit_id', $suit->id)->first();
+        $suitRental = Rental::where('suit_id', $suit->id)->where('finish_rental', false)->first();
         if($suitRental) {
             return back()->with('sewaBelumSelesai', 'Masa penyewaan belum berakhir');
         }
@@ -75,5 +77,18 @@ class ControllerDashboardPenyewaan extends Controller
             // Email tidak ditemukan, kembali ke halaman sebelumnya
             return back()->with('errorEmail', 'Email tidak terdaftar');
         }
+    }
+
+    // sewaan selesai 
+    public function finishRentalSuit(Rental $rental) {
+        $finishRental = Rental::where('id', $rental->id)->first();
+        $finishRental->finish_rental = true;
+        $finishRental->update();
+
+        $suitAvailability = Suit::where('id', $rental->suit_id)->first();
+        $suitAvailability->availability = true;
+        $suitAvailability->update();
+
+        return back();
     }
 }

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->dateTime('rental_date');
             $table->dateTime('finish_rental_date');
+            $table->boolean('finish_rental')->default(false);
             $table->timestamps();
         });
     }

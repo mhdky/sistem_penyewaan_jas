@@ -39,6 +39,7 @@ Route::get('/rent/suit', [SuitController::class, 'rentSuit'])->middleware('auth'
 Route::get('/dashboard/penyewaan', [ControllerDashboardPenyewaan::class, 'index'])->middleware('admin'); //tampilkan jas yang disewa
 Route::get('/dashboard/penyewaan/{suit:code}', [ControllerDashboardPenyewaan::class, 'formRental'])->middleware('admin'); //form dashboar penyewaan
 Route::post('/dashboard/penyewaan/{suit:id}', [ControllerDashboardPenyewaan::class, 'rentalSuit'])->middleware('admin'); // masukan data sewaan ke tabel rental
+Route::put('/dashboard/penyewaan/{rental:id}', [ControllerDashboardPenyewaan::class, 'finishRentalSuit'])->middleware('admin'); // masukan data sewaan ke tabel rental
 
 Route::middleware([
     'auth:sanctum',
