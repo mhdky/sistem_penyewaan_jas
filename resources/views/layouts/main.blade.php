@@ -26,5 +26,7 @@
     @stack('description')
     @stack('about')
     @stack('live-search')
+    @stack('btn-sewa-active')
+    @stack('countdown')
 </body>
 </html>

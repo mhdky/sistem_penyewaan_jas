@@ -39,7 +39,7 @@
                             <p class="text-white text-sm font-bold">Pengaturan akun</p>
                         </a>
 
-                        <a href="#" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
+                        <a href="/rent/suit" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
                             <img src="{{ asset('img/suit-tie.svg') }}" alt="icon" class="w-6 h-6">
                             <p class="text-white text-sm font-bold">Jas yang disewa</p>
                         </a>
@@ -131,7 +131,7 @@
                             <p class="text-white text-sm font-bold">Pengaturan akun</p>
                         </a>
 
-                        <a href="#" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
+                        <a href="/rent/suit" class="w-full flex justify items-center gap-x-3 px-4 py-3 hover:bg-violet-600">
                             <img src="{{ asset('img/suit-tie.svg') }}" alt="icon" class="w-6 h-6">
                             <p class="text-white text-sm font-bold">Jas yang disewa</p>
                         </a>

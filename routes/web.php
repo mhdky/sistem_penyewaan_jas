@@ -33,6 +33,7 @@ Route::get('/sdjfqisdfhef/{getEmail}', [SearchController::class, 'searchGetEmail
 Route::get('/suit/adult', [SuitController::class, 'index']); // jas dewasa
 Route::get('/suit/kids', [SuitController::class, 'kids']); //jas anak 
 Route::get('/this/suit/{name}/{code}', [SuitController::class, 'detailSuit']); //detail suit
+Route::get('/rent/suit', [SuitController::class, 'rentSuit'])->middleware('auth'); // jas yang disewa
 
 // dashboard penyewaan
 Route::get('/dashboard/penyewaan', [ControllerDashboardPenyewaan::class, 'index'])->middleware('admin'); //tampilkan jas yang disewa
