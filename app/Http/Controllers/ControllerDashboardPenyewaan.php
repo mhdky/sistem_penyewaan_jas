@@ -17,8 +17,6 @@ class ControllerDashboardPenyewaan extends Controller
         $email = Auth::user()->email;
         $profilePhotoUrl = Gravatar::get($email);
 
-        // $adults = Suit::where('category_id', 1)->latest()->get();
-
         $rentals = Rental::where('finish_rental', false)->latest()->get();
         
         return view('dashboard.penyewaan.index', [
@@ -29,6 +27,7 @@ class ControllerDashboardPenyewaan extends Controller
         ]);
     }
 
+    // view form rental
     public function formRental(Suit $suit) {
         $email = Auth::user()->email;
         $profilePhotoUrl = Gravatar::get($email);
@@ -45,6 +44,8 @@ class ControllerDashboardPenyewaan extends Controller
         $validateData = $request->validate([
             'name' => 'required|min:1|max:50',
             'email' => 'required|email|min:1|max:100',
+            'rental_fee' => 'required|numeric|min:1|max:99999999',
+            'warranty_fee' => 'required|numeric|min:1|max:99999999',
             'rental_date' => 'required|date',
             'finish_rental_date' => 'required|date',
         ]);
@@ -68,6 +69,8 @@ class ControllerDashboardPenyewaan extends Controller
             $rental->suit_id = $suit->id;
             $rental->name = $validateData['name'];
             $rental->email = $email;
+            $rental->rental_fee = $validateData['rental_fee'];
+            $rental->warranty_fee = $validateData['warranty_fee'];
             $rental->rental_date = $validateData['rental_date'];
             $rental->finish_rental_date = $validateData['finish_rental_date'];        
             $rental->save();
@@ -82,7 +85,13 @@ class ControllerDashboardPenyewaan extends Controller
     // sewaan selesai 
     public function finishRentalSuit(Rental $rental) {
         $finishRental = Rental::where('id', $rental->id)->first();
+
+        // cek jika jas dikembalikan lewat dari tanggal akhir sewaan
+        if (now() < $finishRental->finish_rental_date) {
+            $finishRental->warranty_fee = 0;
+        }
         $finishRental->finish_rental = true;
+        $finishRental->total_cost = $finishRental->rental_fee + $finishRental->warranty_fee;
         $finishRental->update();
 
         $suitAvailability = Suit::where('id', $rental->suit_id)->first();

@@ -107,7 +107,7 @@
                     <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
                         <input type="email" name="email" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" required value="{{ old('email') }}" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
                         {{-- hasil pencarian email --}}
-                        <div class="containerPencarianEmail w-full absolute left-0 top-7 hidden">
+                        <div class="containerPencarianEmail w-full absolute z-[2] left-0 top-7 hidden">
                             <div class="searchResult bg-zinc-100 w-full max-h-32 overflow-auto border border-gray-300"></div>
                             <p class="closeContainerPencarianEmail w-full bg-red-50 py-2 text-red-700 text-[12px] font-semibold text-center border-x border-b border-gray-300 md-800:cursor-pointer">Tutup</p>
                         </div>
@@ -118,6 +118,30 @@
                     @if (session()->has('errorEmail'))
                         <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ session('errorEmail') }}</p>
                     @endif
+                </div>
+
+                {{-- biaya penyewaan --}}
+                <div class="w-full mt-10 flex flex-col">
+                    <label for="rental_fee" class="text-zinc-500 text-sm font-bold">Biaya Penyewaan</label>
+                    <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
+                        <input type="number" name="rental_fee" id="rental_fee" placeholder="Biaya Penyewaan" required minlength="1" maxlength="50" min="1" max="99999999" value="{{ old('name') }}" class="inputNumberRental w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        <div class="bg-white w-6 h-8 absolute -top-[3px] right-0"></div>
+                    </div>
+                    @error('rental_fee')
+                        <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                {{-- biaya Jaminan --}}
+                <div class="w-full mt-10 flex flex-col">
+                    <label for="warranty_fee" class="text-zinc-500 text-sm font-bold">Biaya Jaminan</label>
+                    <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
+                        <input type="number" name="warranty_fee" id="warranty_fee" placeholder="Biaya Jaminan" required minlength="1" maxlength="50" min="1" max="99999999" value="{{ old('name') }}" class="inputNumberRental w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        <div class="bg-white w-6 h-8 absolute -top-[3px] right-0"></div>
+                    </div>
+                    @error('warranty_fee')
+                        <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 {{-- tanggal penyewaan --}}

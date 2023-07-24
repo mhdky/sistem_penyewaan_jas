@@ -36,6 +36,7 @@ function inputEmail() {
     }
 }
 
+// email autocomplite
 email.addEventListener('keyup', (e) => {
     const getEmail = e.target.value.trim();
 
@@ -79,4 +80,24 @@ email.addEventListener('keyup', (e) => {
 // jika tombol close di tekan maka container pencarian email hilang
 closeContainerPencarianEmail.addEventListener('click', () => {
     containerPencarianEmail.style.display = 'none';
+});
+
+// validasi total biaya rental dan biaya jaminan
+const inputNumberRentalElements = document.querySelectorAll(".inputNumberRental");
+
+// Tambahkan event listener untuk setiap elemen
+inputNumberRentalElements.forEach(inputElement => {
+    inputElement.addEventListener('input', function() {
+        const value = this.value;
+        
+        // Pengecekan jika karakter pertama adalah '0' atau '.'
+        if (value.startsWith('0') || value.startsWith('.')) {
+        // Jika karakter pertama adalah '0' atau '.', set nilai input ke string kosong
+        this.value = '';
+        } else if (isNaN(value)) {
+        // Pengecekan jika nilai input bukan angka (misalnya, jika ada karakter selain angka)
+        // Jika ada karakter selain angka, hapus karakter tersebut dari nilai input
+        this.value = value.replace(/[^0-9.]/g, '');
+        }
+    });
 });

@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('email');
             $table->dateTime('rental_date');
             $table->dateTime('finish_rental_date');
+            $table->integer('rental_fee');
+            $table->integer('warranty_fee');
+            $table->integer('total_cost')->default(0);
             $table->boolean('finish_rental')->default(false);
             $table->timestamps();
         });

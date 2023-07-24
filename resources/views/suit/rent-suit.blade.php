@@ -31,13 +31,13 @@
                                 {{-- gambar --}}
                                 <img src="{{ asset($userRental->suit->main_picture) }}" alt="jas" class="w-[51px]">
                                 {{-- code jas --}}
-                                <h1 class="text-zinc-800 text-sm font-semibold flex-[2]">{{ $userRental->suit->name . ' - ' . $userRental->suit->code }}</h1>
+                                <h1 class="text-zinc-800 text-[12px] font-semibold flex-[2] sm-580:text-sm">{{ $userRental->suit->name . ' - ' . $userRental->suit->code }}</h1>
                             </div>
 
                             {{-- harga --}}
                             <div class="ml-2 flex flex-col items-end gap-y-1">
-                                <p class="text-zinc-800 text-[12px]">Rp. 75.000</p>
-                                <p class="text-zinc-800 text-[12px]">Rp. 100.000</p>
+                                <p class="text-zinc-800 text-[12px]">Rp. {{ number_format($userRental->rental_fee,0,'','.') }}</p>
+                                <p class="text-zinc-800 text-[12px]">Rp. {{ number_format($userRental->warranty_fee,0,'','.') }}</p>
                             </div>
                         </div>
 
@@ -93,13 +93,15 @@
                                 {{-- gambar --}}
                                 <img src="{{ asset($userFinishRental->suit->main_picture) }}" alt="jas" class="w-[51px]">
                                 {{-- code jas --}}
-                                <h1 class="text-zinc-800 text-sm font-semibold flex-[2]">{{ $userFinishRental->suit->name . ' - ' . $userFinishRental->suit->code }}</h1>
+                                <h1 class="text-zinc-800 text-[12px] font-semibold flex-[2] sm-580:text-sm">{{ $userFinishRental->suit->name . ' - ' . $userFinishRental->suit->code }}</h1>
                             </div>
 
                             {{-- harga --}}
-                            <div class="ml-2 flex flex-col items-end gap-y-1">
-                                <p class="text-zinc-800 text-[12px]">Rp. 75.000</p>
-                                <p class="text-zinc-800 text-[12px]">Rp. 100.000</p>
+                            <div class="w-max ml-2 flex flex-col items-end gap-y-1">
+                                <p class="text-zinc-800 text-[12px]">Rp. {{ number_format($userFinishRental->rental_fee,0,'','.') }}</p>
+                                <p class="text-zinc-800 text-[12px]">Rp. {{ number_format($userFinishRental->warranty_fee,0,'','.') }}</p>
+                                <div class="bg-zinc-400 w-full h-[1px]"></div>
+                                <p class="text-zinc-600 font-bold text-[12px]">Rp. {{ number_format($userFinishRental->total_cost,0,'','.') }}</p>
                             </div>
                         </div>
 
