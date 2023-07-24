@@ -98,7 +98,7 @@
                             <p class="detailPenyewaan hidden opacity-0 bg-[#0000007e] px-2 py-0.5 rounded-[3px] text-white text-[12px] absolute -top-9 -right-[10px] translate-y-1 duration-300">Detail</p>
                             <img src="{{ asset('img/eye.svg') }}" alt="icon" class="w-[15px] h-[15px]">
                         </div>
-                        <div class="btnDetailPenyewaan bg-blue-500 w-[25px] h-[25px] flex justify-center items-center rounded-[5px] md-800:cursor-pointer relative">
+                        <div class="btnDetailPenyewaan bg-blue-500 w-[25px] h-[25px] flex justify-center items-center rounded-[5px] md-800:cursor-pointer relative" onclick="window.location='/dashboard/penyewaan/{{ $rental->id }}/edit'">
                             <p class="detailPenyewaan hidden opacity-0 bg-[#0000007e] px-2 py-0.5 rounded-[3px] text-white text-[12px] absolute -top-9 -right-[5px] translate-y-1 duration-300">Edit</p>
                             <img src="{{ asset('img/edit.svg') }}" alt="icon" class="w-[15px] h-[15px]">
                         </div>

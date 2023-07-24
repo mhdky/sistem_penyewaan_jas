@@ -100,4 +100,58 @@ class ControllerDashboardPenyewaan extends Controller
 
         return back();
     }
+
+    // tampilan edit data rental berdasarkan id 
+    public function editRental(Rental $rental) {
+        // cek jika penyewaan telah selesai maka tidak dapat mengakses halaman edit rental
+        if ($rental->finish_rental == true) {
+            abort('404');
+        }
+
+        $email = Auth::user()->email;
+        $profilePhotoUrl = Gravatar::get($email);
+
+        $suit = Suit::where('id', $rental->suit_id)->first();
+
+        return view('dashboard.penyewaan.form-rental', [
+            'title' => $rental->id,
+            'profil' => $profilePhotoUrl,
+            'rental' => $rental,
+            'suit' => $suit,
+        ]);
+    }
+
+    // update rental ke database rental berdasarkan id
+    public function updateRental(Request $request, Rental $rental) {
+        $validateData = $request->validate([
+            'name' => 'required|min:1|max:50',
+            'email' => 'required|email|min:1|max:100',
+            'rental_fee' => 'required|numeric|min:1|max:99999999',
+            'warranty_fee' => 'required|numeric|min:1|max:99999999',
+            'rental_date' => 'required|date',
+            'finish_rental_date' => 'required|date',
+        ]);
+
+        if ($rental->finish_rental == true) {
+            return back()->with('gagal', 'Gagal mengedit data');
+        }
+
+        // Lakukan pengecekan apakah email yang dimasukkan sudah ada di tabel users
+        $email = $validateData['email'];
+        
+        if(User::where('email', $email)->exists()) {
+            $rental->name = $validateData['name'];
+            $rental->email = $email;
+            $rental->rental_fee = $validateData['rental_fee'];
+            $rental->warranty_fee = $validateData['warranty_fee'];
+            $rental->rental_date = $validateData['rental_date'];
+            $rental->finish_rental_date = $validateData['finish_rental_date'];        
+            $rental->update();
+
+            return redirect('/dashboard/penyewaan');
+        }else {
+            // Email tidak ditemukan, kembali ke halaman sebelumnya
+            return back()->with('errorEmail', 'Email tidak terdaftar');
+        }
+    }
 }

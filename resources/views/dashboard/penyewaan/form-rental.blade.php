@@ -83,18 +83,32 @@
             </div>
 
             {{-- form penyewaan --}}
-            <form method="POST" action="/dashboard/penyewaan/{{ $suit->id }}" autocomplete="off" class="w-full mt-12 md-768:w-full md-768:flex-[2] md-768:order-1 md-768:mt-0">
+            @if (isset($rental) &&  Request::is('dashboard/penyewaan/' . $rental->id . '/edit'))
+                <form method="POST" action="/dashboard/penyewaan/{{ $rental->id }}/update" autocomplete="off" class="w-full mt-12 md-768:w-full md-768:flex-[2] md-768:order-1 md-768:mt-0">
+            @else
+                <form method="POST" action="/dashboard/penyewaan/{{ $suit->id }}" autocomplete="off" class="w-full mt-12 md-768:w-full md-768:flex-[2] md-768:order-1 md-768:mt-0">
+            @endif
                 {{-- jika sewaan belum berakhir --}}
                 @if (session()->has('sewaBelumSelesai'))
                     <p class="bg-red-400 w-full py-2 border border-red-500 mb-3 text-white text-sm text-center font-bold">{{ session('sewaBelumSelesai') }}</p>
                 @endif
-
+                {{-- jika sewa sudah berakhir --}}
+                @if (session()->has('gagal'))
+                    <p class="bg-red-400 w-full py-2 border border-red-500 mb-3 text-white text-sm text-center font-bold">{{ session('gagal') }}</p>
+                @endif
+                @if (isset($rental) &&  Request::is('dashboard/penyewaan/' . $rental->id . '/edit'))
+                    @method('put')
+                @endif
                 @csrf
                 {{-- nama penyewa --}}
                 <div class="w-full flex flex-col">
                     <label for="name" class="text-zinc-500 text-sm font-bold">Nama Penyewa</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300">
-                        <input type="text" name="name" id="name" placeholder="Nama" required minlength="1" maxlength="50" value="{{ old('name') }}" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @if (isset($rental) &&  Request::is('dashboard/penyewaan/' . $rental->id . '/edit'))
+                            <input type="text" name="name" id="name" placeholder="Nama" required minlength="1" maxlength="50" value="{{ old('name', $rental->name) }}" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @else
+                            <input type="text" name="name" id="name" placeholder="Nama" required minlength="1" maxlength="50" value="{{ old('name') }}" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @endif
                     </div>
                     @error('name')
                         <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
@@ -105,7 +119,11 @@
                 <div class="w-full mt-10 flex flex-col">
                     <label for="email" class="text-zinc-500 text-sm font-bold">Email Penyewa</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
-                        <input type="email" name="email" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" required value="{{ old('email') }}" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @if (isset($rental) &&  Request::is('dashboard/penyewaan/' . $rental->id . '/edit'))
+                            <input type="email" name="email" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" required value="{{ old('email', $rental->email) }}" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @else
+                            <input type="email" name="email" onkeyup="inputEmail()" id="email" placeholder="example@mail.com" required value="{{ old('email') }}" class="w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @endif
                         {{-- hasil pencarian email --}}
                         <div class="containerPencarianEmail w-full absolute z-[2] left-0 top-7 hidden">
                             <div class="searchResult bg-zinc-100 w-full max-h-32 overflow-auto border border-gray-300"></div>
@@ -124,7 +142,11 @@
                 <div class="w-full mt-10 flex flex-col">
                     <label for="rental_fee" class="text-zinc-500 text-sm font-bold">Biaya Penyewaan</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
-                        <input type="number" name="rental_fee" id="rental_fee" placeholder="Biaya Penyewaan" required minlength="1" maxlength="50" min="1" max="99999999" value="{{ old('name') }}" class="inputNumberRental w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @if (isset($rental) &&  Request::is('dashboard/penyewaan/' . $rental->id . '/edit'))
+                            <input type="number" name="rental_fee" id="rental_fee" placeholder="Biaya Penyewaan" required minlength="1" maxlength="50" min="1" max="99999999" value="{{ old('rental_fee', $rental->rental_fee) }}" class="inputNumberRental w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @else
+                            <input type="number" name="rental_fee" id="rental_fee" placeholder="Biaya Penyewaan" required minlength="1" maxlength="50" min="1" max="99999999" value="{{ old('rental_fee') }}" class="inputNumberRental w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @endif
                         <div class="bg-white w-6 h-8 absolute -top-[3px] right-0"></div>
                     </div>
                     @error('rental_fee')
@@ -136,7 +158,11 @@
                 <div class="w-full mt-10 flex flex-col">
                     <label for="warranty_fee" class="text-zinc-500 text-sm font-bold">Biaya Jaminan</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300 relative">
-                        <input type="number" name="warranty_fee" id="warranty_fee" placeholder="Biaya Jaminan" required minlength="1" maxlength="50" min="1" max="99999999" value="{{ old('name') }}" class="inputNumberRental w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @if (isset($rental) &&  Request::is('dashboard/penyewaan/' . $rental->id . '/edit'))
+                            <input type="number" name="warranty_fee" id="warranty_fee" placeholder="Biaya Jaminan" required minlength="1" maxlength="50" min="1" max="99999999" value="{{ old('warranty_fee', $rental->warranty_fee) }}" class="inputNumberRental w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @else
+                            <input type="number" name="warranty_fee" id="warranty_fee" placeholder="Biaya Jaminan" required minlength="1" maxlength="50" min="1" max="99999999" value="{{ old('warranty_fee') }}" class="inputNumberRental w-full border-none p-0 text-zinc-500 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @endif
                         <div class="bg-white w-6 h-8 absolute -top-[3px] right-0"></div>
                     </div>
                     @error('warranty_fee')
@@ -148,7 +174,11 @@
                 <div class="w-full mt-10 flex flex-col">
                     <label for="rental_date" class="text-zinc-500 text-sm font-bold">Mulai Penyewaan</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300">
-                        <input type="datetime-local" name="rental_date" id="rental_date" required value="{{ old('rental_date') }}" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @if (isset($rental) &&  Request::is('dashboard/penyewaan/' . $rental->id . '/edit'))
+                            <input type="datetime-local" name="rental_date" id="rental_date" required value="{{ old('rental_date', $rental->rental_date) }}" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">                            
+                        @else
+                            <input type="datetime-local" name="rental_date" id="rental_date" required value="{{ old('rental_date') }}" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @endif
                     </div>
                     @error('rental_date')
                         <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
@@ -159,14 +189,18 @@
                 <div class="w-full mt-10 flex flex-col">
                     <label for="finish_rental_date" class="text-zinc-500 text-sm font-bold">Akhir Penyewaan</label>
                     <div class="w-full mt-2 pb-1 border-b border-gray-300">
-                        <input type="datetime-local" name="finish_rental_date" id="finish_rental_date" required value="{{ old('finish_rental_date') }}" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @if (isset($rental) &&  Request::is('dashboard/penyewaan/' . $rental->id . '/edit'))
+                            <input type="datetime-local" name="finish_rental_date" id="finish_rental_date" required value="{{ old('finish_rental_date', $rental->finish_rental_date) }}" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @else
+                            <input type="datetime-local" name="finish_rental_date" id="finish_rental_date" required value="{{ old('finish_rental_date') }}" class="w-full border-none p-0 text-zinc-400 text-[13px] font-semibold placeholder:text-zinc-400 focus:ring-0">
+                        @endif
                     </div>
                     @error('finish_rental_date')
                         <p class="text-red-500 text-[12px] font-bold mt-0.5">{{ $message }}</p>
                     @enderror
                 </div>
 
-                <button type="submit" class="bg-blue-primary w-full h-[37px] mt-10 text-white text-sm font-semibold rounded-[5px]">Sewa</button>
+                <button type="submit" class="bg-blue-primary w-full h-[37px] mt-10 text-white text-sm font-semibold rounded-[5px]">{{ (isset($rental) &&  Request::is('dashboard/penyewaan/' . $rental->id . '/edit')) ? 'Edit data' : 'Sewa' }}</button>
             </form>
         </div>
     </div>

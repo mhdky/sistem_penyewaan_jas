@@ -141,7 +141,7 @@
                 @endforeach
 
                 @if ($userFinishRentals->count() < 1)
-                    <div class="w-full py-[50px] text-zinc-700 text-sm text-center font-bold">Kamu belum pernah melakukan penyewaan</div>
+                    <div class="w-full py-[50px] text-zinc-700 text-sm text-center font-bold">Kamu belum pernah menyelesaikan penyewaan</div>
                 @endif
             </div>
         </div>
