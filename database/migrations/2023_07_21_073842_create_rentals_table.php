@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('warranty_fee');
             $table->integer('total_cost')->default(0);
             $table->boolean('finish_rental')->default(false);
+            $table->boolean('protection')->default(true);
             $table->timestamps();
         });
     }

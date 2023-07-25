@@ -8,6 +8,7 @@ use App\Models\User;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Termwind\Components\Dd;
 
 class ControllerDashboardPenyewaan extends Controller
@@ -108,6 +109,8 @@ class ControllerDashboardPenyewaan extends Controller
             abort('404');
         }
 
+        DB::table('rentals')->where('id', $rental->id)->update(['protection' => false]);
+
         $email = Auth::user()->email;
         $profilePhotoUrl = Gravatar::get($email);
 
@@ -132,7 +135,13 @@ class ControllerDashboardPenyewaan extends Controller
             'finish_rental_date' => 'required|date',
         ]);
 
+        // jika jas sudah selesai di sewa
         if ($rental->finish_rental == true) {
+            return back()->with('gagal', 'Gagal mengedit data');
+        }
+
+        // jika protection bernilai true
+        if ($rental->protection == true) {
             return back()->with('gagal', 'Gagal mengedit data');
         }
 
@@ -146,6 +155,7 @@ class ControllerDashboardPenyewaan extends Controller
             $rental->warranty_fee = $validateData['warranty_fee'];
             $rental->rental_date = $validateData['rental_date'];
             $rental->finish_rental_date = $validateData['finish_rental_date'];        
+            $rental->protection = true;
             $rental->update();
 
             return redirect('/dashboard/penyewaan');
